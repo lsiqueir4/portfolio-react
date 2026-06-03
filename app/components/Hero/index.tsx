@@ -42,7 +42,7 @@ export default function Hero() {
         <img
           src={profile}
           className="
-            h-64 w-64
+            h-128 w-128
             rounded-full
             object-cover
             border-4 border-purple-500

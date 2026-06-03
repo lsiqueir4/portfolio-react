@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Download, Send } from "lucide-react";
 
 type HeaderButtonProps = {
   children: ReactNode;
@@ -36,6 +37,37 @@ function HeaderButton({
   );
 }
 
+type ActionButtonProps = {
+  children: ReactNode;
+  href?: string;
+  icon?: ReactNode;
+};
+
+function ActionButton({
+  children,
+  href = "#",
+  icon,
+}: ActionButtonProps) {
+  return (
+    <a
+      href={href}
+      className="
+        flex items-center gap-2
+        rounded-lg
+        bg-purple-500
+        px-5 py-2.5
+        text-sm font-medium text-white
+        transition
+        hover:bg-purple-400
+        hover:scale-105
+      "
+    >
+      {icon}
+      {children}
+    </a>
+  );
+}
+
 export function Header() {
   return (
     <header
@@ -52,12 +84,16 @@ export function Header() {
           flex
           max-w-7xl
           items-center
-          justify-center
+          justify-between
           px-6
           py-5
         "
       >
-        <ul className="flex flex-wrap items-center gap-8">
+        <h1 className="text-lg font-bold text-white">
+          Leandro.dev
+        </h1>
+
+        <ul className="hidden items-center gap-8 md:flex">
           <HeaderButton href="#inicio">
             Início
           </HeaderButton>
@@ -77,11 +113,31 @@ export function Header() {
           <HeaderButton href="#certificacoes">
             Certificações
           </HeaderButton>
-
-          <HeaderButton href="#contatos">
-            Entre em contato
-          </HeaderButton>
         </ul>
+
+        <div className="flex items-center gap-4">
+          <a
+            href="#contato"
+            className="
+              hidden
+              items-center gap-2
+              text-sm font-medium text-zinc-200
+              transition
+              hover:text-purple-400
+              md:flex
+            "
+          >
+            <Send size={18} />
+            Contato
+          </a>
+
+          <ActionButton
+            href="/cv.pdf"
+            icon={<Download size={18} />}
+          >
+            Baixar CV
+          </ActionButton>
+        </div>
       </nav>
     </header>
   );
