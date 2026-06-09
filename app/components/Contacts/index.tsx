@@ -11,7 +11,7 @@ export default function Contacts() {
         flex
         items-center
         justify-center
-        bg-zinc-950
+        bg-indigo-950
       "
     >
       <div
@@ -20,33 +20,56 @@ export default function Contacts() {
           max-w-2xl
           rounded-2xl
           border
-          border-purple-500
-          bg-zinc-400-100
+          border-purple-500/30
+          bg-gray-950
           p-10
-          shadow-lg
+          shadow-2xl
         "
       >
-        <h1 className="mb-10 text-4xl font-bold text-white">
+        <h1 className="mb-3 text-4xl font-bold text-white">
           Entre em Contato
         </h1>
 
-        <div className="space-y-8">
-          <div
+        <p className="mb-10 text-zinc-400">
+          Estou disponível para oportunidades, projetos freelance e
+          networking. Entre em contato pelos canais abaixo.
+        </p>
+
+        <div className="space-y-6">
+          <a
+            href="https://wa.me/5511956663035"
+            target="_blank"
+            rel="noopener noreferrer"
             className="
               flex
               items-center
               gap-4
               rounded-xl
               border
-              border-zinc-800
+              border-indigo-800
+              bg-indigo-950
               p-5
-              transition
-              hover:border-green-500
-              hover:bg-zinc-900
+              transition-all
+              duration-300
+              hover:border-purple-500
+              hover:bg-indigo-800
+              hover:shadow-lg
+              hover:shadow-purple-500/10
             "
           >
-            <div className="rounded-full bg-green-500/10 p-3">
-              <Phone className="text-green-500" size={28} />
+            <div
+              className="
+                rounded-full
+                bg-purple-500/10
+                p-3
+                border
+                border-green-500
+              "
+            >
+              <Phone
+                size={28}
+                className="text-green-500"
+              />
             </div>
 
             <div>
@@ -54,28 +77,44 @@ export default function Contacts() {
                 WhatsApp
               </h2>
 
-              <p className="text-zinc-400">
+              <p className="text-zinc-400 hover:font-bold transition-all">
                 +55 (11) 95666-3035
               </p>
             </div>
-          </div>
+          </a>
 
-          <div
+          <a
+            href="mailto:l.gsiqueira997@gmail.com"
             className="
               flex
               items-center
               gap-4
               rounded-xl
               border
-              border-zinc-800
+              border-indigo-800
+              bg-indigo-950
               p-5
-              transition
+              transition-all
+              duration-300
               hover:border-purple-500
-              hover:bg-zinc-900
+              hover:bg-indigo-800
+              hover:shadow-lg
+              hover:shadow-purple-500/10
             "
           >
-            <div className="rounded-full bg-purple-500/10 p-3">
-              <Mail className="text-purple-500" size={28} />
+            <div
+              className="
+                rounded-full
+                bg-purple-500/10
+                p-3
+                border
+                border-purple-400
+              "
+            >
+              <Mail
+                size={28}
+                className="text-purple-400"
+              />
             </div>
 
             <div>
@@ -83,11 +122,11 @@ export default function Contacts() {
                 Email
               </h2>
 
-              <p className="text-zinc-400">
+              <p className="text-zinc-400 hover:font-bold transition-all">
                 l.gsiqueira997@gmail.com
               </p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
