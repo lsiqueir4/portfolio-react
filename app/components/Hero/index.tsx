@@ -29,6 +29,7 @@ function Button({ children, href = "#" }: ButtonProps) {
 export default function Hero() {
   return (
     <section
+      id="hero"
       className="
         grid min-h-screen
         grid-cols-1
@@ -51,7 +52,6 @@ export default function Hero() {
         />
       </div>
 
-      {/* Conteúdo */}
       <div className="flex flex-col items-center text-center md:items-start md:text-left">
         <p className="mb-2 text-purple-400 font-medium">
           Olá, eu sou
@@ -70,14 +70,13 @@ export default function Hero() {
           criando aplicações modernas, responsivas e escaláveis.
         </p>
 
-        {/* Botões */}
         <div className="mt-8 flex flex-wrap gap-4">
           <Button>
             <Download size={18} />
             Baixar CV
           </Button>
 
-          <Button>
+          <Button href="#contacts">
             <Send size={18} />
             Entre em contato
           </Button>

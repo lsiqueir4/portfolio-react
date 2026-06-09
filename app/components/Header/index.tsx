@@ -94,7 +94,7 @@ export function Header() {
         </h1>
 
         <ul className="hidden items-center gap-8 md:flex">
-          <HeaderButton href="#inicio">
+          <HeaderButton href="#hero">
             Início
           </HeaderButton>
 
@@ -117,7 +117,7 @@ export function Header() {
 
         <div className="flex items-center gap-4">
           <a
-            href="#contato"
+            href="#contacts"
             className="
               hidden
               items-center gap-2
