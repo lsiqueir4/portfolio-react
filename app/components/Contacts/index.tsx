@@ -1,4 +1,4 @@
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, ExternalLink } from "lucide-react";
 
 export default function Contacts() {
   return (
@@ -11,7 +11,7 @@ export default function Contacts() {
         flex
         items-center
         justify-center
-        bg-indigo-950
+        bg-purple-950/80
       "
     >
       <div
@@ -30,7 +30,7 @@ export default function Contacts() {
           Entre em Contato
         </h1>
 
-        <p className="mb-10 text-zinc-400">
+        <p className="mb-10 text-zinc-400 font-medium">
           Estou disponível para oportunidades, projetos freelance e
           networking. Entre em contato pelos canais abaixo.
         </p>
@@ -46,13 +46,13 @@ export default function Contacts() {
               gap-4
               rounded-xl
               border
-              border-indigo-800
-              bg-indigo-950
+              border-purple-800
+              bg-purple-950/80
               p-5
               transition-all
               duration-300
               hover:border-purple-500
-              hover:bg-indigo-800
+              hover:bg-purple-800
               hover:shadow-lg
               hover:shadow-purple-500/10
             "
@@ -60,7 +60,7 @@ export default function Contacts() {
             <div
               className="
                 rounded-full
-                bg-purple-500/10
+                bg-purple-700/10
                 p-3
                 border
                 border-green-500
@@ -77,7 +77,7 @@ export default function Contacts() {
                 WhatsApp
               </h2>
 
-              <p className="text-zinc-400 hover:font-bold transition-all">
+              <p className="text-zinc-400 font-medium hover:font-bold transition-all">
                 +55 (11) 95666-3035
               </p>
             </div>
@@ -91,13 +91,13 @@ export default function Contacts() {
               gap-4
               rounded-xl
               border
-              border-indigo-800
-              bg-indigo-950
+              border-purple-800
+              bg-purple-950/80
               p-5
               transition-all
               duration-300
               hover:border-purple-500
-              hover:bg-indigo-800
+              hover:bg-purple-800
               hover:shadow-lg
               hover:shadow-purple-500/10
             "
@@ -105,7 +105,7 @@ export default function Contacts() {
             <div
               className="
                 rounded-full
-                bg-purple-500/10
+                bg-purple-700/10
                 p-3
                 border
                 border-purple-400
@@ -122,8 +122,52 @@ export default function Contacts() {
                 Email
               </h2>
 
-              <p className="text-zinc-400 hover:font-bold transition-all">
+              <p className="text-zinc-400 font-medium hover:font-bold transition-all">
                 l.gsiqueira997@gmail.com
+              </p>
+            </div>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/l-siqueiraa/"
+            className="
+              flex
+              items-center
+              gap-4
+              rounded-xl
+              border
+              border-purple-800
+              bg-purple-950/80
+              p-5
+              transition-all
+              duration-300
+              hover:border-purple-500
+              hover:bg-purple-800
+              hover:shadow-lg
+              hover:shadow-purple-500/10
+            "
+          >
+            <div
+              className="
+                rounded-full
+                bg-purple-700/10
+                p-3
+                border
+                border-blue-600
+              "
+            >
+              <ExternalLink
+                size={28}
+                className="text-blue-600"
+              />
+            </div>
+
+            <div>
+              <h2 className="text-lg font-semibold text-white">
+                Linkedin
+              </h2>
+
+              <p className="text-zinc-400 font-medium hover:font-bold transition-all">
+                Leandro Siqueira
               </p>
             </div>
           </a>

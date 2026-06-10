@@ -15,7 +15,7 @@ function Button({ children, href = "#" }: ButtonProps) {
         flex items-center gap-2
         rounded-lg border border-purple-500
         px-6 py-3
-        font-medium
+        font-bold
         transition
         hover:bg-purple-500
         hover:text-white
@@ -29,7 +29,7 @@ function Button({ children, href = "#" }: ButtonProps) {
 export default function Hero() {
   return (
     <section
-      id="hero"
+      id="inicio"
       className="
         grid min-h-screen
         grid-cols-1
@@ -57,22 +57,22 @@ export default function Hero() {
           Olá, eu sou
         </p>
 
-        <h1 className="text-5xl font-bold tracking-tight">
+        <h1 className="text-5xl font-extrabold tracking-tight">
           Leandro Siqueira
         </h1>
 
-        <h2 className="mt-4 text-xl text-zinc-400">
+        <h2 className="mt-4 text-xl font-bold text-zinc-400">
           Desenvolvedor Full-Stack
         </h2>
 
-        <p className="mt-6 max-w-xl text-zinc-500">
+        <p className="mt-6 max-w-xl text-zinc-500 leading-relaxed font-medium">
           Desenvolvedor focado em React, Next.js e APIs com Python,
           criando aplicações modernas, responsivas e escaláveis.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-4">
           <Button>
-            <Download size={18} />
+            <Download size={18} href="https://drive.google.com/uc?export=download&id=1e--yv8KrbVbT4D1aFwRdLmg4lYGYtm7i" />
             Baixar CV
           </Button>
 

@@ -1,10 +1,30 @@
-import type { ReactNode } from "react";
+
 import { GitBranch, ExternalLink } from "lucide-react";
+import type { IconType } from "react-icons";
+import TechBadge from "../UI/TechBadge";
+import {
+  SiReact,
+  SiJavascript,
+  SiPython,
+  SiFlask,
+  SiTypescript,
+  SiPostgresql,
+  SiDocker,
+  SiPytest,
+  SiSqlalchemy,
+  SiTailwindcss  
+} from "react-icons/si";
+import { DiAws } from "react-icons/di"
+
+interface Tech {
+  name: string;
+  icon: IconType;
+}
 
 type ProjectContainerProps = {
   title: string;
   description: string;
-  usedTechs: string[];
+  usedTechs: Tech[];
   link: string
 };
 
@@ -35,22 +55,29 @@ function ProjectContainer({
         {title}
       </h3>
 
-      <p className="mb-5 text-zinc-400">
+      <p className="mb-5 text-zinc-400 font-medium">
         {description}
       </p>
 
-      <div className="flex flex-wrap gap-2">
-        {usedTechs.map((tech) => (<span key={tech} className="rounded-full bg-purple-500/10 px-3 py-1 text-sm text-purple-300">{tech}</span>))}
+      <div className="flex flex-wrap gap-3">
+        {usedTechs.map(({ icon, name }) => (
+          <TechBadge
+            key={name}
+            Icon={icon}
+            name={name}
+          />
+        ))}
       </div>
 
       <div className="mt-6 flex gap-4">
         <a
-          href= {link}
+          href={link}
           className="
             flex items-center gap-2
             text-sm text-zinc-400
+            font-bold
             transition
-            hover:text-purple-400
+            hover:text-purple-400 cursor-pointer
           "
         >
           <GitBranch size={18} />
@@ -77,10 +104,10 @@ function ProjectContainer({
 export default function Projects() {
   return (
     <section
-      id="projects"
+      id="projetos"
       className="
         min-h-screen
-        bg-indigo-950
+        bg-purple-950/80
         px-6
         py-20
       "
@@ -91,7 +118,7 @@ export default function Projects() {
             Projetos
           </h1>
 
-          <p className="mx-auto max-w-2xl text-zinc-400">
+          <p className="mx-auto max-w-2xl text-zinc-400 font-medium">
             Projetos desenvolvidos para consolidar conhecimentos nas tecnologias que estudei.
           </p>
         </div>
@@ -107,19 +134,19 @@ export default function Projects() {
           <ProjectContainer
             title="Portfólio"
             description="Portfólio desenvolvido em React para divulgar projetos pessoais e informações para contato."
-            usedTechs={["React", "Tailwind"]}
+            usedTechs={[ { name: "React", icon: SiReact }, { name: "JavaScript", icon: SiJavascript }, { name: "TypeScript", icon: SiTypescript }, {name: "TailwindCSS", icon: SiTailwindcss}]} 
             link="https://github.com/lsiqueir4/portfolio-react"
           />
           <ProjectContainer
             title="API REST Banco digital"
             description="API Rest desenvolvida em Python com a integração ao ambiente de homologação de um banco digital."
-            usedTechs={["Python", "Flask", "PostgreSQL", "AWS", "Ngrok", "SQLAlchemy"]}
+            usedTechs={[{ name: "Python", icon: SiPython }, { name: "Flask", icon: SiFlask }, { name: "PostgreSQL", icon: SiPostgresql },{ name: "Docker", icon: SiDocker }, {name: "Pytest", icon:SiPytest}, {name:"AWS",icon: DiAws}, {name:"SQLAlchemy", icon:SiSqlalchemy }]}
             link="https://github.com/lsiqueir4/bank-integration"
           />
           <ProjectContainer
             title="API REST Geração de receitas médicas"
             description="API desenvolvida em Python com autenticação de usuários e lógica de permissionamento que gera documentos em PDF para receitas médicas."
-            usedTechs={["Python", "Flask", "PostgreSQL", "Marshmellow", "Jinja2", "Weasyprint", "Pytest"]}
+            usedTechs={[{ name: "Python", icon: SiPython }, { name: "Flask", icon: SiFlask }, { name: "PostgreSQL", icon: SiPostgresql },{ name: "Docker", icon: SiDocker }, {name: "Pytest", icon:SiPytest}, {name:"SQLAlchemy", icon:SiSqlalchemy }]}
             link="https://github.com/lsiqueir4/online-prescription-api"
           />
         </div>
