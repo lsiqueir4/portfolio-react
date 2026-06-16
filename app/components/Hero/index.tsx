@@ -23,13 +23,13 @@ function Button({
         font-bold
         transition-all duration-300
         w-full sm:w-auto
+        text-white
 
         ${
           primary
             ? `
               bg-purple-500
               border border-purple-500
-              text-white
               hover:bg-purple-400
               hover:scale-105
               hover:shadow-lg
@@ -173,6 +173,7 @@ export default function Hero() {
               text-4xl
               font-extrabold
               tracking-tight
+              text-white
               sm:text-5xl
               lg:text-6xl
             "
