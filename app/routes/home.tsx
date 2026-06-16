@@ -3,6 +3,7 @@ import Hero from "../components/Hero"
 import Contacts from "../components/Contacts"
 import Projects from "~/components/Projects";
 import Aboutme from "../components/AboutMe"
+import Footer from "../components/Footer"
 
 export function meta({ }: Route.MetaArgs) {
   return [
@@ -18,6 +19,7 @@ export default function Home() {
       <Projects />
       <Aboutme />
       <Contacts />
+      <Footer />
     </>
   )
 }

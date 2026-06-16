@@ -27,8 +27,9 @@ function HeaderButton({
           relative
           text-sm
           font-medium
-          text-zinc-200
-          transition-colors
+          text-zinc-300
+          transition-all
+          duration-300
           hover:text-purple-400
           after:absolute
           after:-bottom-1
@@ -37,6 +38,7 @@ function HeaderButton({
           after:w-0
           after:bg-purple-400
           after:transition-all
+          after:duration-300
           hover:after:w-full
         "
       >
@@ -67,13 +69,19 @@ function ActionButton({
         items-center
         justify-center
         gap-2
-        rounded-lg
+        rounded-xl
         bg-purple-500
-        px-4 py-2.5
-        text-sm font-medium text-white
+        px-4
+        py-2.5
+        text-sm
+        font-semibold
+        text-white
         transition-all
+        duration-300
         hover:scale-105
         hover:bg-purple-400
+        hover:shadow-lg
+        hover:shadow-purple-500/30
       "
     >
       {icon}
@@ -92,10 +100,13 @@ export function Header() {
   return (
     <header
       className="
-        sticky top-0 z-50
-        border-b border-white/10
-        bg-gray-950/80
-        backdrop-blur-md
+        sticky
+        top-0
+        z-50
+        border-b
+        border-purple-500/10
+        bg-zinc-950/70
+        backdrop-blur-xl
       "
     >
       <nav
@@ -107,23 +118,28 @@ export function Header() {
           px-4
           py-4
           sm:px-6
+          lg:px-8
         "
       >
-        {/* Barra principal */}
         <div className="flex items-center justify-between">
           <a
             href="#inicio"
             className="
-              text-lg
+              flex
+              items-center
+              gap-2
+              text-xl
               font-extrabold
               tracking-tight
               text-white
+              transition-colors
+              hover:text-purple-400
             "
           >
+            <span className="text-purple-400">&lt;/&gt;</span>
             Leandro.dev
           </a>
 
-          {/* Navegação Desktop */}
           <div className="hidden items-center gap-8 md:flex">
             <ul className="flex items-center gap-8">
               <HeaderButton href="#inicio">
@@ -142,10 +158,18 @@ export function Header() {
             <a
               href="#contacts"
               className="
-                flex items-center gap-2
-                text-sm font-medium
-                text-zinc-200
-                transition-colors
+                flex
+                items-center
+                gap-2
+                rounded-lg
+                px-3
+                py-2
+                text-sm
+                font-medium
+                text-zinc-300
+                transition-all
+                duration-300
+                hover:bg-purple-500/10
                 hover:text-purple-400
               "
             >
@@ -161,15 +185,19 @@ export function Header() {
             </ActionButton>
           </div>
 
-          {/* Botão Mobile */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="
-              rounded-lg
-              p-2
-              text-zinc-200
-              transition-colors
-              hover:bg-white/5
+              rounded-xl
+              border
+              border-purple-500/10
+              p-2.5
+              text-zinc-300
+              transition-all
+              duration-300
+              hover:border-purple-500/30
+              hover:bg-purple-500/10
+              hover:text-purple-400
               md:hidden
             "
             aria-label="Abrir menu"
@@ -182,7 +210,6 @@ export function Header() {
           </button>
         </div>
 
-        {/* Menu Mobile */}
         <div
           className={`
             overflow-hidden
@@ -198,21 +225,30 @@ export function Header() {
         >
           <div
             className="
-              flex flex-col gap-4
-              rounded-xl
-              border border-white/10
+              flex
+              flex-col
+              gap-2
+              rounded-2xl
+              border
+              border-purple-500/10
               bg-zinc-900/80
               p-4
+              backdrop-blur-md
             "
           >
             <a
               href="#inicio"
               onClick={closeMenu}
               className="
+                rounded-lg
+                px-4
+                py-3
                 text-sm
                 font-medium
-                text-zinc-200
-                transition-colors
+                text-zinc-300
+                transition-all
+                duration-300
+                hover:bg-purple-500/10
                 hover:text-purple-400
               "
             >
@@ -223,10 +259,15 @@ export function Header() {
               href="#projetos"
               onClick={closeMenu}
               className="
+                rounded-lg
+                px-4
+                py-3
                 text-sm
                 font-medium
-                text-zinc-200
-                transition-colors
+                text-zinc-300
+                transition-all
+                duration-300
+                hover:bg-purple-500/10
                 hover:text-purple-400
               "
             >
@@ -237,10 +278,15 @@ export function Header() {
               href="#aboutme"
               onClick={closeMenu}
               className="
+                rounded-lg
+                px-4
+                py-3
                 text-sm
                 font-medium
-                text-zinc-200
-                transition-colors
+                text-zinc-300
+                transition-all
+                duration-300
+                hover:bg-purple-500/10
                 hover:text-purple-400
               "
             >
@@ -251,10 +297,18 @@ export function Header() {
               href="#contacts"
               onClick={closeMenu}
               className="
-                flex items-center gap-2
-                text-sm font-medium
-                text-zinc-200
-                transition-colors
+                flex
+                items-center
+                gap-2
+                rounded-lg
+                px-4
+                py-3
+                text-sm
+                font-medium
+                text-zinc-300
+                transition-all
+                duration-300
+                hover:bg-purple-500/10
                 hover:text-purple-400
               "
             >
@@ -262,12 +316,14 @@ export function Header() {
               Contato
             </a>
 
-            <ActionButton
-              href="https://drive.google.com/uc?export=download&id=1e--yv8KrbVbT4D1aFwRdLmg4lYGYtm7i"
-              icon={<Download size={18} />}
-            >
-              Baixar CV
-            </ActionButton>
+            <div className="pt-2">
+              <ActionButton
+                href="https://drive.google.com/uc?export=download&id=1e--yv8KrbVbT4D1aFwRdLmg4lYGYtm7i"
+                icon={<Download size={18} />}
+              >
+                Baixar CV
+              </ActionButton>
+            </div>
           </div>
         </div>
       </nav>
