@@ -12,9 +12,10 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 import { DiAws } from "react-icons/di";
-import Portfolio from "../../assets/projects/portfolio.png"
-import BankApi from "../../assets/projects/bank-api.png"
-import OnlinePrescriptionApi from "../../assets/projects/online-prescription-api.png"
+import Portfolio from "~/assets/projects/portfolio.png"
+import BankApi from "~/assets/projects/bank-api.png"
+import OnlinePrescriptionApi from "~/assets/projects/online-prescription-api.png"
+import { CONTACTS } from "~/constants";
 
 export const projects: ProjectContainerProps[] = [{
     title: "Portfólio",
@@ -25,7 +26,7 @@ export const projects: ProjectContainerProps[] = [{
         { name: "TypeScript", icon: SiTypescript },
         { name: "TailwindCSS", icon: SiTailwindcss },
     ],
-    link: "https://github.com/lsiqueir4/portfolio-react",
+    link: `${CONTACTS.github}portfolio-react`,
     image: Portfolio 
 },
 {
@@ -40,7 +41,7 @@ export const projects: ProjectContainerProps[] = [{
               { name: "AWS", icon: DiAws },
               { name: "SQLAlchemy", icon: SiSqlalchemy },
             ],
-    link: "https://github.com/lsiqueir4/bank-integration",
+    link: `${CONTACTS.github}bank-integration`,
     image: BankApi
 },
 {
@@ -54,6 +55,6 @@ export const projects: ProjectContainerProps[] = [{
               { name: "Pytest", icon: SiPytest },
               { name: "SQLAlchemy", icon: SiSqlalchemy },
             ],
-    link: "https://github.com/lsiqueir4/online-prescription-api",
+    link: `${CONTACTS.github}online-prescription-api`,
     image: OnlinePrescriptionApi
 }]

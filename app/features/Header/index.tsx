@@ -6,6 +6,7 @@ import {
   Send,
   X,
 } from "lucide-react";
+import { CONTACTS } from "~/constants";
 
 function HeaderButton({
   children,
@@ -168,7 +169,7 @@ export function Header() {
             </a>
 
             <ActionButton
-              href="https://drive.google.com/uc?export=download&id=1e--yv8KrbVbT4D1aFwRdLmg4lYGYtm7i"
+              href={CONTACTS.cvDownloadLink}
               icon={<Download size={18} />}
             >
               Baixar CV
@@ -308,7 +309,7 @@ export function Header() {
 
             <div className="pt-2">
               <ActionButton
-                href="https://drive.google.com/uc?export=download&id=1e--yv8KrbVbT4D1aFwRdLmg4lYGYtm7i"
+                href={CONTACTS.cvDownloadLink}
                 icon={<Download size={18} />}
               >
                 Baixar CV

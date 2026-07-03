@@ -1,3 +1,5 @@
+import { CONTACTS } from "~/constants";
+
 export default function Footer() {
   return (
     <footer
@@ -17,7 +19,7 @@ export default function Footer() {
         "
       >
         <p className="text-sm text-zinc-500">
-          © {new Date().getFullYear()} Leandro Siqueira. Todos os direitos reservados.
+          © {new Date().getFullYear()} {CONTACTS.fullName}. Todos os direitos reservados.
         </p>
       </div>
     </footer>

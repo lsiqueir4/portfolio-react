@@ -1,8 +1,9 @@
-import profile from "../../assets/profile.png";
+import profile from "~/assets/profile.png";
 import { Download, Send } from "lucide-react";
 import type { ButtonProps } from "./types";
-import TechBadge from "../UI/TechBadge"
+import TechBadge from "~/shared/TechBadge"
 import { techs } from "./data";
+import { CONTACTS } from "~/constants";
 
 function Button({
   children,
@@ -88,7 +89,7 @@ export default function Hero() {
 
             <img
               src={profile}
-              alt="Leandro Siqueira"
+              alt={CONTACTS.fullName}
               className="
                 relative
                 h-64 w-64
@@ -145,7 +146,7 @@ export default function Hero() {
               lg:text-6xl
             "
           >
-            Leandro Siqueira
+            {CONTACTS.fullName}
           </h1>
 
           <h2
@@ -210,7 +211,7 @@ export default function Hero() {
             >
               <Button
                 primary
-                href="https://drive.google.com/uc?export=download&id=1e--yv8KrbVbT4D1aFwRdLmg4lYGYtm7i"
+                href={CONTACTS.cvDownloadLink}
               >
                 <Download size={18} />
                 Baixar CV

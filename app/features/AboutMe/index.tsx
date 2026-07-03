@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import TechBadge from "../UI/TechBadge";
+import TechBadge from "~/shared/TechBadge";
 import type { Experience } from "./types";
 import { experiences, frontEndTechs, backEndTechs, courses, toolsTechs } from "./data";
 

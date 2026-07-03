@@ -1,4 +1,5 @@
 import { Phone, Mail, ExternalLink } from "lucide-react";
+import { CONTACTS } from "~/constants" ;
 
 export default function Contacts() {
   return (
@@ -108,7 +109,7 @@ export default function Contacts() {
 
           <div className="space-y-4 sm:space-y-6">
             <a
-              href="https://wa.me/5511956663035"
+              href={CONTACTS.whatsappRedirectLink}
               target="_blank"
               rel="noopener noreferrer"
               className="
@@ -169,13 +170,13 @@ export default function Contacts() {
                     sm:text-base
                   "
                 >
-                  +55 (11) 95666-3035
+                  {CONTACTS.formattedPhone}
                 </p>
               </div>
             </a>
 
             <a
-              href="mailto:l.gsiqueira997@gmail.com"
+              href={`mailto:${CONTACTS.email}`}
               className="
                 group
                 flex
@@ -234,13 +235,13 @@ export default function Contacts() {
                     sm:text-base
                   "
                 >
-                  l.gsiqueira997@gmail.com
+                  {CONTACTS.email}
                 </p>
               </div>
             </a>
 
             <a
-              href="https://www.linkedin.com/in/l-siqueiraa/"
+              href={CONTACTS.linkedinRedirectLink}
               target="_blank"
               rel="noopener noreferrer"
               className="
@@ -300,7 +301,7 @@ export default function Contacts() {
                     sm:text-base
                   "
                 >
-                  Leandro Siqueira
+                  {CONTACTS.fullName}
                 </p>
               </div>
             </a>

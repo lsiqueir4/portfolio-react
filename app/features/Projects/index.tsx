@@ -1,6 +1,6 @@
 import { GitBranch } from "lucide-react";
 import type { ProjectContainerProps } from "./types";
-import TechBadge from "../UI/TechBadge";
+import TechBadge from "~/shared/TechBadge";
 import { projects } from "./data";
 
 function ProjectContainer({
