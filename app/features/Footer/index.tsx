@@ -1,5 +1,3 @@
-import { ExternalLink, ArrowUp } from "lucide-react";
-
 export default function Footer() {
   return (
     <footer

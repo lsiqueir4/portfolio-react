@@ -1,9 +1,9 @@
 import type { Route } from "./+types/home";
-import Hero from "../components/Hero"
-import Contacts from "../components/Contacts"
-import Projects from "~/components/Projects";
-import Aboutme from "../components/AboutMe"
-import Footer from "../components/Footer"
+import Hero from "../features/Hero"
+import Contacts from "../features/Contacts"
+import Projects from "~/features/Projects";
+import Aboutme from "../features/AboutMe"
+import Footer from "../features/Footer"
 
 export function meta({ }: Route.MetaArgs) {
   return [

@@ -1,17 +1,11 @@
 import { useState } from "react";
-import type { ReactNode } from "react";
+import type { HeaderButtonProps, ActionButtonProps } from "./types";
 import {
   Download,
   Menu,
   Send,
   X,
 } from "lucide-react";
-
-type HeaderButtonProps = {
-  children: ReactNode;
-  href?: string;
-  onClick?: () => void;
-};
 
 function HeaderButton({
   children,
@@ -48,11 +42,7 @@ function HeaderButton({
   );
 }
 
-type ActionButtonProps = {
-  children: ReactNode;
-  href?: string;
-  icon?: ReactNode;
-};
+
 
 function ActionButton({
   children,

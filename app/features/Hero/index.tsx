@@ -1,12 +1,8 @@
 import profile from "../../assets/profile.png";
-import type { ReactNode } from "react";
 import { Download, Send } from "lucide-react";
-
-type ButtonProps = {
-  children: ReactNode;
-  href?: string;
-  primary?: boolean;
-};
+import type { ButtonProps } from "./types";
+import TechBadge from "../UI/TechBadge"
+import { techs } from "./data";
 
 function Button({
   children,
@@ -25,9 +21,8 @@ function Button({
         w-full sm:w-auto
         text-white
 
-        ${
-          primary
-            ? `
+        ${primary
+          ? `
               bg-purple-500
               border border-purple-500
               hover:bg-purple-400
@@ -35,7 +30,7 @@ function Button({
               hover:shadow-lg
               hover:shadow-purple-500/30
             `
-            : `
+          : `
               border border-purple-500
               hover:bg-purple-500
               hover:text-white
@@ -45,34 +40,6 @@ function Button({
     >
       {children}
     </a>
-  );
-}
-
-function StatCard({
-  value,
-  label,
-}: {
-  value: string;
-  label: string;
-}) {
-  return (
-    <div
-      className="
-        rounded-xl
-        border border-purple-500/20
-        bg-zinc-900/50
-        px-4 py-3
-        backdrop-blur-sm
-      "
-    >
-      <p className="text-2xl font-bold text-purple-400">
-        {value}
-      </p>
-
-      <p className="text-sm text-zinc-400">
-        {label}
-      </p>
-    </div>
   );
 }
 
@@ -219,33 +186,19 @@ export default function Hero() {
               md:justify-start
             "
           >
-            {[
-              "Python",
-              "Flask",
-              "React",
-              "TypeScript",
-              "PostgreSQL",
-              "MySQL",
-              "Docker",
-            ].map((tech) => (
-              <span
-                key={tech}
-                className="
-                  rounded-full
-                  border border-purple-500/20
-                  bg-purple-500/10
-                  px-3 py-1
-                  text-sm
-                  text-purple-300
-                "
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
+            <div className="flex flex-wrap gap-2 sm:gap-3">
+              {techs.map(({ icon, name }) => (
+                <TechBadge
+                  key={name}
+                  Icon={icon}
+                  name={name}
+                />
+              ))}
+            </div>
+            </div>
 
-          <div
-            className="
+            <div
+              className="
               mt-8
               flex
               w-full
@@ -254,23 +207,23 @@ export default function Hero() {
               sm:flex-row
               sm:w-auto
             "
-          >
-            <Button
-              primary
-              href="https://drive.google.com/uc?export=download&id=1e--yv8KrbVbT4D1aFwRdLmg4lYGYtm7i"
             >
-              <Download size={18} />
-              Baixar CV
-            </Button>
+              <Button
+                primary
+                href="https://drive.google.com/uc?export=download&id=1e--yv8KrbVbT4D1aFwRdLmg4lYGYtm7i"
+              >
+                <Download size={18} />
+                Baixar CV
+              </Button>
 
-            <Button href="#contacts">
-              <Send size={18} />
-              Entre em contato
-            </Button>
+              <Button href="#contacts">
+                <Send size={18} />
+                Entre em contato
+              </Button>
+            </div>
+
           </div>
-
         </div>
-      </div>
-    </section>
+    </section >
   );
 }
