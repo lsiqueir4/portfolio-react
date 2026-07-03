@@ -12,7 +12,7 @@ import {
   SiGit,
   SiDocker,
   SiNotion,
-  SiPostman
+  SiPostman,
 } from "react-icons/si";
 
 import type { Tech, Experience, Course } from "./types";
@@ -20,14 +20,14 @@ import type { Tech, Experience, Course } from "./types";
 export const frontEndTechs: Tech[] = [
   { name: "React", icon: SiReact },
   { name: "JavaScript", icon: SiJavascript },
-  { name: "TypeScript", icon: SiTypescript }
+  { name: "TypeScript", icon: SiTypescript },
 ];
 
 export const backEndTechs: Tech[] = [
   { name: "Python", icon: SiPython },
   { name: "Flask", icon: SiFlask },
   { name: "MySQL", icon: SiMysql },
-  { name: "PostgreSQL", icon: SiPostgresql }
+  { name: "PostgreSQL", icon: SiPostgresql },
 ];
 
 export const toolsTechs: Tech[] = [
@@ -37,7 +37,7 @@ export const toolsTechs: Tech[] = [
   { name: "Git", icon: SiGit },
   { name: "Docker", icon: SiDocker },
   { name: "Notion", icon: SiNotion },
-  {name: "Postman", icon: SiPostman}
+  { name: "Postman", icon: SiPostman },
 ];
 
 export const experiences: Experience[] = [

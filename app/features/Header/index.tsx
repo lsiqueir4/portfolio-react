@@ -1,18 +1,9 @@
 import { useState } from "react";
 import type { HeaderButtonProps, ActionButtonProps } from "./types";
-import {
-  Download,
-  Menu,
-  Send,
-  X,
-} from "lucide-react";
+import { Download, Menu, Send, X } from "lucide-react";
 import { CONTACTS } from "~/constants";
 
-function HeaderButton({
-  children,
-  href = "#",
-  onClick,
-}: HeaderButtonProps) {
+function HeaderButton({ children, href = "#", onClick }: HeaderButtonProps) {
   return (
     <li>
       <a
@@ -43,13 +34,7 @@ function HeaderButton({
   );
 }
 
-
-
-function ActionButton({
-  children,
-  href = "#",
-  icon,
-}: ActionButtonProps) {
+function ActionButton({ children, href = "#", icon }: ActionButtonProps) {
   return (
     <a
       href={href}
@@ -133,17 +118,11 @@ export function Header() {
 
           <div className="hidden items-center gap-8 md:flex">
             <ul className="flex items-center gap-8">
-              <HeaderButton href="#inicio">
-                Início
-              </HeaderButton>
+              <HeaderButton href="#inicio">Início</HeaderButton>
 
-              <HeaderButton href="#projetos">
-                Projetos
-              </HeaderButton>
+              <HeaderButton href="#projetos">Projetos</HeaderButton>
 
-              <HeaderButton href="#aboutme">
-                Quem sou eu
-              </HeaderButton>
+              <HeaderButton href="#aboutme">Quem sou eu</HeaderButton>
             </ul>
 
             <a
@@ -168,10 +147,7 @@ export function Header() {
               Contato
             </a>
 
-            <ActionButton
-              href={CONTACTS.cvDownloadLink}
-              icon={<Download size={18} />}
-            >
+            <ActionButton href={CONTACTS.cvDownloadLink} icon={<Download size={18} />}>
               Baixar CV
             </ActionButton>
           </div>
@@ -193,11 +169,7 @@ export function Header() {
             "
             aria-label="Abrir menu"
           >
-            {isMenuOpen ? (
-              <X size={24} />
-            ) : (
-              <Menu size={24} />
-            )}
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
@@ -207,11 +179,7 @@ export function Header() {
             transition-all
             duration-300
             md:hidden
-            ${
-              isMenuOpen
-                ? "mt-4 max-h-96 opacity-100"
-                : "max-h-0 opacity-0"
-            }
+            ${isMenuOpen ? "mt-4 max-h-96 opacity-100" : "max-h-0 opacity-0"}
           `}
         >
           <div
@@ -308,10 +276,7 @@ export function Header() {
             </a>
 
             <div className="pt-2">
-              <ActionButton
-                href={CONTACTS.cvDownloadLink}
-                icon={<Download size={18} />}
-              >
+              <ActionButton href={CONTACTS.cvDownloadLink} icon={<Download size={18} />}>
                 Baixar CV
               </ActionButton>
             </div>

@@ -1,15 +1,11 @@
 import profile from "~/assets/profile.png";
 import { Download, Send } from "lucide-react";
 import type { ButtonProps } from "./types";
-import TechBadge from "~/shared/TechBadge"
+import TechBadge from "~/shared/TechBadge";
 import { techs } from "./data";
 import { CONTACTS } from "~/constants";
 
-function Button({
-  children,
-  href = "#",
-  primary = false,
-}: ButtonProps) {
+function Button({ children, href = "#", primary = false }: ButtonProps) {
   return (
     <a
       href={href}
@@ -22,8 +18,9 @@ function Button({
         w-full sm:w-auto
         text-white
 
-        ${primary
-          ? `
+        ${
+          primary
+            ? `
               bg-purple-500
               border border-purple-500
               hover:bg-purple-400
@@ -31,7 +28,7 @@ function Button({
               hover:shadow-lg
               hover:shadow-purple-500/30
             `
-          : `
+            : `
               border border-purple-500
               hover:bg-purple-500
               hover:text-white
@@ -132,9 +129,7 @@ export default function Hero() {
             Disponível para oportunidades
           </div>
 
-          <p className="mb-2 text-sm font-medium text-purple-400 sm:text-base">
-            Olá, eu sou
-          </p>
+          <p className="mb-2 text-sm font-medium text-purple-400 sm:text-base">Olá, eu sou</p>
 
           <h1
             className="
@@ -171,10 +166,8 @@ export default function Hero() {
               md:text-lg
             "
           >
-            Desenvolvedor com experiência em APIs REST,
-            integrações bancárias, produtos de crédito e
-            aplicações web modernas utilizando Python,
-            Flask, React e TypeScript.
+            Desenvolvedor com experiência em APIs REST, integrações bancárias, produtos de crédito e
+            aplicações web modernas utilizando Python, Flask, React e TypeScript.
           </p>
 
           <div
@@ -189,17 +182,13 @@ export default function Hero() {
           >
             <div className="flex flex-wrap gap-2 sm:gap-3">
               {techs.map(({ icon, name }) => (
-                <TechBadge
-                  key={name}
-                  Icon={icon}
-                  name={name}
-                />
+                <TechBadge key={name} Icon={icon} name={name} />
               ))}
             </div>
-            </div>
+          </div>
 
-            <div
-              className="
+          <div
+            className="
               mt-8
               flex
               w-full
@@ -208,23 +197,19 @@ export default function Hero() {
               sm:flex-row
               sm:w-auto
             "
-            >
-              <Button
-                primary
-                href={CONTACTS.cvDownloadLink}
-              >
-                <Download size={18} />
-                Baixar CV
-              </Button>
+          >
+            <Button primary href={CONTACTS.cvDownloadLink}>
+              <Download size={18} />
+              Baixar CV
+            </Button>
 
-              <Button href="#contacts">
-                <Send size={18} />
-                Entre em contato
-              </Button>
-            </div>
-
+            <Button href="#contacts">
+              <Send size={18} />
+              Entre em contato
+            </Button>
           </div>
         </div>
-    </section >
+      </div>
+    </section>
   );
 }

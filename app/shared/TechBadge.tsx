@@ -5,10 +5,7 @@ type TechBadgeProps = {
   name: string;
 };
 
-export default function TechBadge({
-  Icon,
-  name,
-}: TechBadgeProps) {
+export default function TechBadge({ Icon, name }: TechBadgeProps) {
   return (
     <div
       className="

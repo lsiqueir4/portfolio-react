@@ -43,13 +43,7 @@ function InfoCard({ children }: { children: ReactNode }) {
   );
 }
 
-function ExperienceCard({
-  company,
-  role,
-  startDate,
-  endDate,
-  activities,
-}: Experience) {
+function ExperienceCard({ company, role, startDate, endDate, activities }: Experience) {
   return (
     <div
       className="
@@ -86,9 +80,7 @@ function ExperienceCard({
           {company}
         </h3>
 
-        <p className="font-medium text-purple-300">
-          {role}
-        </p>
+        <p className="font-medium text-purple-300">{role}</p>
 
         <p className="mt-1 text-sm font-medium text-zinc-500">
           {startDate} • {endDate}
@@ -210,11 +202,9 @@ export default function AboutMe() {
               sm:text-lg
             "
           >
-            Desenvolvedor Full Stack com mais de 3 anos de experiência
-            no desenvolvimento de produtos de crédito para uma fintech.
-            Possuo sólida atuação em backend e atualmente estou
-            aprimorando minhas competências em frontend estudando
-            JavaScript, React e Next.js.
+            Desenvolvedor Full Stack com mais de 3 anos de experiência no desenvolvimento de
+            produtos de crédito para uma fintech. Possuo sólida atuação em backend e atualmente
+            estou aprimorando minhas competências em frontend estudando JavaScript, React e Next.js.
           </p>
         </div>
 
@@ -231,17 +221,11 @@ export default function AboutMe() {
             <SectionTitle>Formação Acadêmica</SectionTitle>
 
             <div className="space-y-2">
-              <p className="font-bold text-purple-300">
-                Sistemas de Informação
-              </p>
+              <p className="font-bold text-purple-300">Sistemas de Informação</p>
 
-              <p className="font-medium text-zinc-400">
-                Universidade Metodista de São Paulo
-              </p>
+              <p className="font-medium text-zinc-400">Universidade Metodista de São Paulo</p>
 
-              <p className="font-medium text-zinc-500">
-                Conclusão: 2020
-              </p>
+              <p className="font-medium text-zinc-500">Conclusão: 2020</p>
             </div>
           </InfoCard>
 
@@ -250,23 +234,15 @@ export default function AboutMe() {
 
             <div className="space-y-4">
               <div>
-                <p className="font-medium text-purple-300">
-                  Inglês
-                </p>
+                <p className="font-medium text-purple-300">Inglês</p>
 
-                <p className="text-zinc-400">
-                  Nível Avançado (B2)
-                </p>
+                <p className="text-zinc-400">Nível Avançado (B2)</p>
               </div>
 
               <div>
-                <p className="font-medium text-purple-300">
-                  Português
-                </p>
+                <p className="font-medium text-purple-300">Português</p>
 
-                <p className="text-zinc-400">
-                  Fluente
-                </p>
+                <p className="text-zinc-400">Fluente</p>
               </div>
             </div>
           </InfoCard>
@@ -278,10 +254,7 @@ export default function AboutMe() {
 
             <div className="space-y-10">
               {experiences.map((experience) => (
-                <ExperienceCard
-                  key={`${experience.company}-${experience.role}`}
-                  {...experience}
-                />
+                <ExperienceCard key={`${experience.company}-${experience.role}`} {...experience} />
               ))}
             </div>
           </InfoCard>
@@ -297,40 +270,22 @@ export default function AboutMe() {
         >
           <InfoCard>
             <SectionTitle>Principais Tecnologias</SectionTitle>
-            <p className="font-medium text-purple-300 m-4">
-              FrontEnd
-            </p>
+            <p className="font-medium text-purple-300 m-4">FrontEnd</p>
             <div className="flex flex-wrap gap-2 sm:gap-3">
               {frontEndTechs.map(({ icon, name }) => (
-                <TechBadge
-                  key={name}
-                  Icon={icon}
-                  name={name}
-                />
+                <TechBadge key={name} Icon={icon} name={name} />
               ))}
             </div>
-            <p className="font-medium text-purple-300 m-4">
-              BackEnd
-            </p>
+            <p className="font-medium text-purple-300 m-4">BackEnd</p>
             <div className="flex flex-wrap gap-2 sm:gap-3">
               {backEndTechs.map(({ icon, name }) => (
-                <TechBadge
-                  key={name}
-                  Icon={icon}
-                  name={name}
-                />
+                <TechBadge key={name} Icon={icon} name={name} />
               ))}
             </div>
-            <p className="font-medium text-purple-300 m-4">
-              Ferramentas
-            </p>
+            <p className="font-medium text-purple-300 m-4">Ferramentas</p>
             <div className="flex flex-wrap gap-2 sm:gap-3">
               {toolsTechs.map(({ icon, name }) => (
-                <TechBadge
-                  key={name}
-                  Icon={icon}
-                  name={name}
-                />
+                <TechBadge key={name} Icon={icon} name={name} />
               ))}
             </div>
           </InfoCard>
@@ -354,9 +309,7 @@ export default function AboutMe() {
                     hover:bg-zinc-900/70
                   "
                 >
-                  <h3 className="font-medium text-white">
-                    {course.name}
-                  </h3>
+                  <h3 className="font-medium text-white">{course.name}</h3>
 
                   <div
                     className="

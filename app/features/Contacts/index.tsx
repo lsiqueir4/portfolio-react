@@ -1,5 +1,5 @@
 import { Phone, Mail, ExternalLink } from "lucide-react";
-import { CONTACTS } from "~/constants" ;
+import { CONTACTS } from "~/constants";
 
 export default function Contacts() {
   return (
@@ -103,8 +103,8 @@ export default function Contacts() {
               sm:text-base
             "
           >
-            Estou disponível para oportunidades, projetos freelance e
-            networking. Entre em contato pelos canais abaixo.
+            Estou disponível para oportunidades, projetos freelance e networking. Entre em contato
+            pelos canais abaixo.
           </p>
 
           <div className="space-y-4 sm:space-y-6">
@@ -147,16 +147,11 @@ export default function Contacts() {
                   sm:p-3
                 "
               >
-                <Phone
-                  size={24}
-                  className="text-green-500 sm:h-7 sm:w-7"
-                />
+                <Phone size={24} className="text-green-500 sm:h-7 sm:w-7" />
               </div>
 
               <div className="min-w-0">
-                <h2 className="text-base font-semibold text-white sm:text-lg">
-                  WhatsApp
-                </h2>
+                <h2 className="text-base font-semibold text-white sm:text-lg">WhatsApp</h2>
 
                 <p
                   className="
@@ -212,16 +207,11 @@ export default function Contacts() {
                   sm:p-3
                 "
               >
-                <Mail
-                  size={24}
-                  className="text-purple-400 sm:h-7 sm:w-7"
-                />
+                <Mail size={24} className="text-purple-400 sm:h-7 sm:w-7" />
               </div>
 
               <div className="min-w-0">
-                <h2 className="text-base font-semibold text-white sm:text-lg">
-                  Email
-                </h2>
+                <h2 className="text-base font-semibold text-white sm:text-lg">Email</h2>
 
                 <p
                   className="
@@ -279,16 +269,11 @@ export default function Contacts() {
                   sm:p-3
                 "
               >
-                <ExternalLink
-                  size={24}
-                  className="text-blue-500 sm:h-7 sm:w-7"
-                />
+                <ExternalLink size={24} className="text-blue-500 sm:h-7 sm:w-7" />
               </div>
 
               <div className="min-w-0">
-                <h2 className="text-base font-semibold text-white sm:text-lg">
-                  Linkedin
-                </h2>
+                <h2 className="text-base font-semibold text-white sm:text-lg">Linkedin</h2>
 
                 <p
                   className="

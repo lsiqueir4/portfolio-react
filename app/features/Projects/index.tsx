@@ -3,13 +3,7 @@ import type { ProjectContainerProps } from "./types";
 import TechBadge from "~/shared/TechBadge";
 import { projects } from "./data";
 
-function ProjectContainer({
-  title,
-  description,
-  usedTechs,
-  link,
-  image
-}: ProjectContainerProps) {
+function ProjectContainer({ title, description, usedTechs, link, image }: ProjectContainerProps) {
   return (
     <div
       className="
@@ -74,11 +68,7 @@ function ProjectContainer({
 
       <div className="flex flex-wrap gap-2 sm:gap-3">
         {usedTechs.map(({ icon, name }) => (
-          <TechBadge
-            key={name}
-            Icon={icon}
-            name={name}
-          />
+          <TechBadge key={name} Icon={icon} name={name} />
         ))}
       </div>
 
@@ -196,8 +186,7 @@ export default function Projects() {
               sm:text-base
             "
           >
-            Projetos desenvolvidos para consolidar conhecimentos nas tecnologias
-            que estudei.
+            Projetos desenvolvidos para consolidar conhecimentos nas tecnologias que estudei.
           </p>
         </div>
 
@@ -210,15 +199,15 @@ export default function Projects() {
             xl:grid-cols-3
           "
         >
-          {projects.map((project) =>(
+          {projects.map((project) => (
             <ProjectContainer
-            title={project.title}
-            description={project.description}
-            usedTechs={project.usedTechs}
-            link={project.link}
-            image={project.image}
-          />))}
-          
+              title={project.title}
+              description={project.description}
+              usedTechs={project.usedTechs}
+              link={project.link}
+              image={project.image}
+            />
+          ))}
         </div>
       </div>
     </section>
