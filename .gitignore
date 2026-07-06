@@ -11,3 +11,6 @@
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# GSD research tool cache (regenerable, local-only)
+/.planning/research/.cache/
