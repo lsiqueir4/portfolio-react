@@ -1,14 +1,24 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
+
+  --color-surface: var(--color-zinc-950);
+  --color-surface-elevated: var(--color-zinc-900);
+  --color-on-surface: var(--color-white);
+  --color-muted: var(--color-zinc-400);
+  --color-accent: var(--color-purple-500);
+  --color-accent-hover: var(--color-purple-400);
+  --color-border-subtle: var(--color-purple-500);
 }
 
 html,
 body {
-  @apply text-white bg-gray-950 font-sans;
+  @apply text-on-surface bg-surface font-sans;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
