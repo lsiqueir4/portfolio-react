@@ -5,3 +5,9 @@
 # React Router
 /.react-router/
 /build/
+
+# Playwright runtime output (baseline snapshots under tests/**-snapshots/ ARE committed)
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
