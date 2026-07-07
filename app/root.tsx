@@ -9,6 +9,7 @@ import {
 
 import type { Route } from "./+types/root";
 import { Header } from "./features/Header";
+import { THEME_STORAGE_KEY } from "./constants/theme";
 import "./app.css";
 
 export const links: Route.LinksFunction = () => [
@@ -24,13 +25,12 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
-// Zero-interpolation static script: THEME_STORAGE_KEY is a compile-time
-// constant, not a runtime value, so this string is safe to inject via
-// dangerouslySetInnerHTML (Security V5 / threat T-02-02). Keep this
-// fallback logic byte-for-byte identical to app/hooks/useTheme.ts's
+// Zero-interpolation static script: THEME_STORAGE_KEY (imported from
+// ./constants/theme, the single shared copy used by app/hooks/useTheme.ts
+// too) is a compile-time constant, not a runtime value, so this string is
+// safe to inject via dangerouslySetInnerHTML (Security V5 / threat T-02-02).
+// Keep this fallback logic byte-for-byte identical to app/hooks/useTheme.ts's
 // detectBrowserTheme().
-const THEME_STORAGE_KEY = "theme";
-
 const themeInitScript = `
 (function () {
   try {

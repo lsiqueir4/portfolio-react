@@ -1,4 +1,5 @@
 import { usePersistedPreference } from "./usePersistedPreference";
+import { THEME_STORAGE_KEY } from "~/constants/theme";
 
 const THEME_VALUES = ["light", "dark"] as const;
 type Theme = (typeof THEME_VALUES)[number];
@@ -18,7 +19,7 @@ function applyTheme(theme: Theme) {
 
 export function useTheme() {
   return usePersistedPreference<Theme>({
-    storageKey: "theme",
+    storageKey: THEME_STORAGE_KEY,
     validValues: THEME_VALUES,
     detectBrowserDefault: detectBrowserTheme,
     applySideEffect: applyTheme,
