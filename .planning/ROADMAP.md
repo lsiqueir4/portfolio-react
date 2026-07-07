@@ -13,7 +13,7 @@ This milestone retrofits an existing single-route SSR portfolio (React 19 + Reac
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Theme/CSS Token Centralization** - Replace scattered hardcoded color utility classes with centralized semantic tokens and wire the Tailwind v4 dark-mode variant mechanism, with zero visual regression
+- [x] **Phase 1: Theme/CSS Token Centralization** - Replace scattered hardcoded color utility classes with centralized semantic tokens and wire the Tailwind v4 dark-mode variant mechanism, with zero visual regression (completed 2026-07-07)
 - [ ] **Phase 2: Dark Mode Toggle** - Add a Header sun/moon toggle that defaults to browser preference, persists a manual choice via localStorage, and never flashes the wrong theme
 - [ ] **Phase 3: Language Toggle (i18n)** - Add a Header PT/EN toggle via react-i18next that defaults to browser language, persists a manual choice, and translates every user-facing string 1:1
 - [ ] **Phase 4: Bilingual README** - Rewrite the README as cross-linked PT-BR (`README.md`) and EN (`README.en.md`) versions with feature/tech-stack parity
@@ -33,7 +33,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Every page section renders visually identical to before the refactor (manual before/after verification, since there is no automated visual-regression net)
   4. Repeated component-level patterns across feature folders are de-duplicated without changing visual output or structure
 
-**Plans**: 4/5 plans executed
+**Plans**: 5/5 plans complete
 **Wave 1**
 
 - [x] 01-01-PLAN.md — Playwright visual-regression harness + pre-refactor baseline capture (safety net)
@@ -49,7 +49,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
-- [ ] 01-05-PLAN.md — Final gate: grep-clean + dark-variant compile + full visual diff + human sign-off
+- [x] 01-05-PLAN.md — Final gate: grep-clean + dark-variant compile + full visual diff + human sign-off
 
 **UI hint**: yes
 
@@ -108,7 +108,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Theme/CSS Token Centralization | 4/5 | In Progress|  |
+| 1. Theme/CSS Token Centralization | 5/5 | Complete   | 2026-07-07 |
 | 2. Dark Mode Toggle | 0/TBD | Not started | - |
 | 3. Language Toggle (i18n) | 0/TBD | Not started | - |
 | 4. Bilingual README | 0/TBD | Not started | - |
