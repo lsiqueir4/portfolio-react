@@ -24,14 +24,36 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+// Zero-interpolation static script: THEME_STORAGE_KEY is a compile-time
+// constant, not a runtime value, so this string is safe to inject via
+// dangerouslySetInnerHTML (Security V5 / threat T-02-02). Keep this
+// fallback logic byte-for-byte identical to app/hooks/useTheme.ts's
+// detectBrowserTheme().
+const THEME_STORAGE_KEY = "theme";
+
+const themeInitScript = `
+(function () {
+  try {
+    var stored = localStorage.getItem("${THEME_STORAGE_KEY}");
+    var isDark = stored === "dark" || stored === "light"
+      ? stored === "dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var root = document.documentElement;
+    root.classList.toggle("dark", isDark);
+    root.style.colorScheme = isDark ? "dark" : "light";
+  } catch (e) {}
+})();
+`;
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <Meta />
         <Links />
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body>
         {children}

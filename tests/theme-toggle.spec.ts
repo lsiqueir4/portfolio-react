@@ -58,9 +58,7 @@ test.describe("theme toggle", () => {
     const toggle = header.getByRole("button", { name: /switch to (light|dark) theme/i }).first();
 
     await toggle.click();
-    await expect
-      .poll(() => page.evaluate(() => window.localStorage.getItem("theme")))
-      .toBe("dark");
+    await expect.poll(() => page.evaluate(() => window.localStorage.getItem("theme"))).toBe("dark");
 
     await toggle.click();
     await expect

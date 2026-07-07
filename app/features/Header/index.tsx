@@ -3,6 +3,7 @@ import type { HeaderButtonProps } from "./types";
 import { Download, Menu, Send, X } from "lucide-react";
 import { CONTACTS } from "~/constants";
 import Button from "~/shared/Button";
+import { ThemeToggle } from "./ThemeToggle";
 
 function HeaderButton({ children, href = "#", onClick }: HeaderButtonProps) {
   return (
@@ -125,6 +126,12 @@ export function Header() {
             >
               Baixar CV
             </Button>
+
+            <ThemeToggle />
+          </div>
+
+          <div className="md:hidden">
+            <ThemeToggle />
           </div>
 
           <button
