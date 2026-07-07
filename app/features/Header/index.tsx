@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import type { HeaderButtonProps } from "./types";
 import { Download, Menu, Send, X } from "lucide-react";
 import { CONTACTS } from "~/constants";
 import Button from "~/shared/Button";
 import { ThemeToggle } from "./ThemeToggle";
+import { LanguageToggle } from "./LanguageToggle";
 
 function HeaderButton({ children, href = "#", onClick }: HeaderButtonProps) {
   return (
@@ -37,6 +39,7 @@ function HeaderButton({ children, href = "#", onClick }: HeaderButtonProps) {
 }
 
 export function Header() {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function closeMenu() {
@@ -88,11 +91,11 @@ export function Header() {
 
           <div className="hidden items-center gap-8 md:flex">
             <ul className="flex items-center gap-8">
-              <HeaderButton href="#inicio">Início</HeaderButton>
+              <HeaderButton href="#inicio">{t("header.home")}</HeaderButton>
 
-              <HeaderButton href="#projetos">Projetos</HeaderButton>
+              <HeaderButton href="#projetos">{t("header.projects")}</HeaderButton>
 
-              <HeaderButton href="#aboutme">Quem sou eu</HeaderButton>
+              <HeaderButton href="#aboutme">{t("header.about")}</HeaderButton>
             </ul>
 
             <a
@@ -114,7 +117,7 @@ export function Header() {
               "
             >
               <Send size={18} />
-              Contato
+              {t("header.contact")}
             </a>
 
             <Button
@@ -124,13 +127,15 @@ export function Header() {
               icon={<Download size={18} />}
               className="rounded-xl px-[15px] py-[9px] text-sm font-semibold"
             >
-              Baixar CV
+              {t("common.downloadCV")}
             </Button>
 
+            <LanguageToggle />
             <ThemeToggle />
           </div>
 
-          <div className="md:hidden">
+          <div className="flex items-center gap-2 md:hidden">
+            <LanguageToggle />
             <ThemeToggle />
           </div>
 
@@ -149,7 +154,7 @@ export function Header() {
               hover:text-accent-hover
               md:hidden
             "
-            aria-label="Abrir menu"
+            aria-label={t("header.openMenu")}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -193,7 +198,7 @@ export function Header() {
                 hover:text-accent-hover
               "
             >
-              Início
+              {t("header.home")}
             </a>
 
             <a
@@ -212,7 +217,7 @@ export function Header() {
                 hover:text-accent-hover
               "
             >
-              Projetos
+              {t("header.projects")}
             </a>
 
             <a
@@ -231,7 +236,7 @@ export function Header() {
                 hover:text-accent-hover
               "
             >
-              Quem sou eu
+              {t("header.about")}
             </a>
 
             <a
@@ -254,7 +259,7 @@ export function Header() {
               "
             >
               <Send size={18} />
-              Contato
+              {t("header.contact")}
             </a>
 
             <div className="pt-2">
@@ -265,7 +270,7 @@ export function Header() {
                 icon={<Download size={18} />}
                 className="rounded-xl px-[15px] py-[9px] text-sm font-semibold"
               >
-                Baixar CV
+                {t("common.downloadCV")}
               </Button>
             </div>
           </div>
