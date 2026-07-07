@@ -10,6 +10,8 @@ import {
 import type { Route } from "./+types/root";
 import { Header } from "./features/Header";
 import { THEME_STORAGE_KEY } from "./constants/theme";
+import { LANGUAGE_STORAGE_KEY } from "./constants/language";
+import "./i18n/config";
 import "./app.css";
 
 export const links: Route.LinksFunction = () => [
@@ -45,15 +47,39 @@ const themeInitScript = `
 })();
 `;
 
+// Zero-interpolation static script: LANGUAGE_STORAGE_KEY (imported from
+// ./constants/language, the single shared copy used by app/hooks/useLanguage.ts
+// too) is a compile-time constant, not a runtime value, so this string is
+// safe to inject via dangerouslySetInnerHTML (Security V5 / threat T-03-01).
+// No navigator.language value is interpolated into the script source — it is
+// read at runtime inside the IIFE. Keep this fallback logic byte-for-byte
+// identical to app/hooks/useLanguage.ts's detectBrowserLanguage().
+const languageInitScript = `
+(function () {
+  try {
+    var stored = localStorage.getItem("${LANGUAGE_STORAGE_KEY}");
+    var lang;
+    if (stored === "pt" || stored === "en") {
+      lang = stored;
+    } else {
+      var locale = (navigator.language || "").toLowerCase();
+      lang = locale.indexOf("pt") === 0 ? "pt" : "en";
+    }
+    document.documentElement.lang = lang;
+  } catch (e) {}
+})();
+`;
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="pt" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <Meta />
         <Links />
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <script dangerouslySetInnerHTML={{ __html: languageInitScript }} />
       </head>
       <body>
         {children}
