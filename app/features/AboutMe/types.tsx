@@ -18,3 +18,13 @@ export interface Experience {
   endDate: string;
   activities: string[];
 }
+
+export interface ExperienceData {
+  id: string;
+  company: string;
+}
+
+export interface CourseData {
+  id: string;
+  institution: string;
+}

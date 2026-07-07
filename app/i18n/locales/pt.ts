@@ -53,6 +53,29 @@ export const pt = {
     experience: {
       heading: "Experiência Profissional",
     },
+    experiences: {
+      qitech: {
+        role: "Desenvolvedor Backend",
+        startDate: "Fev 2022",
+        endDate: "Set 2025",
+        activities: [
+          "Atuação na equipe de desenvolvimento referente aos produtos e soluções de crédito.",
+          "Desenvolvimento de APIs e novos produtos, rotina de correção de problemas e suporte aos clientes.",
+          "Criação de testes unitários e integrados para garantir o funcionamento das APIs.",
+          "Criação e acompanhamento de filas, monitoramento da saúde das APIs e filas utilizando Grafana.",
+        ],
+      },
+      viamar: {
+        role: "Analista de suporte",
+        startDate: "Out 2017",
+        endDate: "Fev 2022",
+        activities: [
+          "Responsável pelo controle de acessos.",
+          "Participação em gerenciamento de projetos de T.I.",
+          "Suporte ao usuário, atendimento help desk, montagem e manutenção de computadores.",
+        ],
+      },
+    },
     technologies: {
       heading: "Principais Tecnologias",
       frontend: "FrontEnd",
@@ -61,6 +84,22 @@ export const pt = {
     },
     courses: {
       heading: "Cursos",
+      dataScience: {
+        name: "Ciência de dados com Python",
+        conclusionYear: "2026",
+      },
+      jsTsReact: {
+        name: "Javascript/Typescript/Next.JS/React",
+        conclusionYear: "Em andamento",
+      },
+      databases: {
+        name: "Banco de dados sem mistérios",
+        conclusionYear: "2022",
+      },
+      python: {
+        name: "Python 3 - Básico ao Avançado",
+        conclusionYear: "2022",
+      },
     },
   },
   projects: {

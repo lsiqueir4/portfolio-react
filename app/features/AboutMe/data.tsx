@@ -15,7 +15,7 @@ import {
   SiPostman,
 } from "react-icons/si";
 
-import type { Tech, Experience, Course } from "./types";
+import type { Tech, ExperienceData, CourseData } from "./types";
 
 export const frontEndTechs: Tech[] = [
   { name: "React", icon: SiReact },
@@ -40,51 +40,32 @@ export const toolsTechs: Tech[] = [
   { name: "Postman", icon: SiPostman },
 ];
 
-export const experiences: Experience[] = [
+export const experiences: ExperienceData[] = [
   {
+    id: "qitech",
     company: "QI Tech",
-    role: "Desenvolvedor Backend",
-    startDate: "Fev 2022",
-    endDate: "Set 2025",
-    activities: [
-      "Atuação na equipe de desenvolvimento referente aos produtos e soluções de crédito.",
-      "Desenvolvimento de APIs e novos produtos, rotina de correção de problemas e suporte aos clientes.",
-      "Criação de testes unitários e integrados para garantir o funcionamento das APIs.",
-      "Criação e acompanhamento de filas, monitoramento da saúde das APIs e filas utilizando Grafana.",
-    ],
   },
   {
+    id: "viamar",
     company: "Grupo Viamar",
-    role: "Analista de suporte",
-    startDate: "Out 2017",
-    endDate: "Fev 2022",
-    activities: [
-      "Responsável pelo controle de acessos.",
-      "Participação em gerenciamento de projetos de T.I.",
-      "Suporte ao usuário, atendimento help desk, montagem e manutenção de computadores.",
-    ],
   },
 ];
 
-export const courses: Course[] = [
+export const courses: CourseData[] = [
   {
-    name: "Ciência de dados com Python",
+    id: "dataScience",
     institution: "DIO",
-    conclusionYear: "2026",
   },
   {
-    name: "Javascript/Typescript/Next.JS/React",
+    id: "jsTsReact",
     institution: "Udemy",
-    conclusionYear: "Em andamento",
   },
   {
-    name: "Banco de dados sem mistérios",
+    id: "databases",
     institution: "Udemy",
-    conclusionYear: "2022",
   },
   {
-    name: "Python 3 - Básico ao Avançado",
+    id: "python",
     institution: "Udemy/Cod3r",
-    conclusionYear: "2022",
   },
 ];

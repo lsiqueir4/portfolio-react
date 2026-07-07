@@ -210,9 +210,25 @@ export default function AboutMe() {
             <SectionTitle>{t("about.experience.heading")}</SectionTitle>
 
             <div className="space-y-10">
-              {experiences.map((experience) => (
-                <ExperienceCard key={`${experience.company}-${experience.role}`} {...experience} />
-              ))}
+              {experiences.map((experience) => {
+                const role = t(`about.experiences.${experience.id}.role`);
+                const startDate = t(`about.experiences.${experience.id}.startDate`);
+                const endDate = t(`about.experiences.${experience.id}.endDate`);
+                const activities = t(`about.experiences.${experience.id}.activities`, {
+                  returnObjects: true,
+                }) as string[];
+
+                return (
+                  <ExperienceCard
+                    key={experience.id}
+                    company={experience.company}
+                    role={role}
+                    startDate={startDate}
+                    endDate={endDate}
+                    activities={activities}
+                  />
+                );
+              })}
             </div>
           </InfoCard>
         </div>
@@ -251,42 +267,47 @@ export default function AboutMe() {
             <SectionTitle>{t("about.courses.heading")}</SectionTitle>
 
             <div className="space-y-4">
-              {courses.map((course) => (
-                <div
-                  key={`${course.name}-${course.institution}`}
-                  className="
-                    rounded-lg
-                    border
-                    border-border-subtle/10
-                    bg-surface/50
-                    p-4
-                    transition-all
-                    duration-300
-                    hover:border-border-subtle/30
-                    hover:bg-surface-elevated/70
-                  "
-                >
-                  <h3 className="font-medium text-on-surface">{course.name}</h3>
+              {courses.map((course) => {
+                const name = t(`about.courses.${course.id}.name`);
+                const conclusionYear = t(`about.courses.${course.id}.conclusionYear`);
 
+                return (
                   <div
+                    key={course.id}
                     className="
-                      mt-2
-                      flex
-                      flex-col
-                      gap-1
-                      text-sm
-                      font-medium
-                      text-muted
-                      sm:flex-row
-                      sm:items-center
-                      sm:justify-between
+                      rounded-lg
+                      border
+                      border-border-subtle/10
+                      bg-surface/50
+                      p-4
+                      transition-all
+                      duration-300
+                      hover:border-border-subtle/30
+                      hover:bg-surface-elevated/70
                     "
                   >
-                    <span>{course.institution}</span>
-                    <span>{course.conclusionYear}</span>
+                    <h3 className="font-medium text-on-surface">{name}</h3>
+
+                    <div
+                      className="
+                        mt-2
+                        flex
+                        flex-col
+                        gap-1
+                        text-sm
+                        font-medium
+                        text-muted
+                        sm:flex-row
+                        sm:items-center
+                        sm:justify-between
+                      "
+                    >
+                      <span>{course.institution}</span>
+                      <span>{conclusionYear}</span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </InfoCard>
         </div>
