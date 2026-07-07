@@ -1,5 +1,6 @@
 import { GitBranch } from "lucide-react";
 import type { ProjectContainerProps } from "./types";
+import Section from "~/shared/Section";
 import TechBadge from "~/shared/TechBadge";
 import { projects } from "./data";
 
@@ -13,16 +14,16 @@ function ProjectContainer({ title, description, usedTechs, link, image }: Projec
         flex-col
         rounded-2xl
         border
-        border-purple-500/20
-        bg-zinc-900/50
+        border-border-subtle/20
+        bg-surface-elevated/50
         p-5
         backdrop-blur-sm
         transition-all
         duration-300
         hover:-translate-y-2
-        hover:border-purple-400/50
+        hover:border-accent-hover/50
         hover:shadow-xl
-        hover:shadow-purple-500/20
+        hover:shadow-accent/20
         sm:p-6
       "
     >
@@ -46,7 +47,7 @@ function ProjectContainer({ title, description, usedTechs, link, image }: Projec
           mb-3
           text-xl
           font-semibold
-          text-white
+          text-on-surface
           sm:text-2xl
         "
       >
@@ -59,7 +60,7 @@ function ProjectContainer({ title, description, usedTechs, link, image }: Projec
           flex-grow
           text-sm
           font-medium
-          text-zinc-400
+          text-muted
           sm:text-base
         "
       >
@@ -83,17 +84,17 @@ function ProjectContainer({ title, description, usedTechs, link, image }: Projec
             gap-2
             rounded-lg
             border
-            border-purple-500/20
+            border-border-subtle/20
             px-4
             py-2.5
             text-sm
             font-bold
-            text-zinc-400
+            text-muted
             transition-all
             duration-300
-            hover:border-purple-500
-            hover:bg-purple-500/10
-            hover:text-purple-400
+            hover:border-accent
+            hover:bg-accent/10
+            hover:text-accent-hover
           "
         >
           <GitBranch size={18} />
@@ -112,7 +113,7 @@ export default function Projects() {
         relative
         overflow-hidden
         min-h-screen
-        bg-zinc-950
+        bg-surface
         px-4
         py-16
         sm:px-6
@@ -129,7 +130,7 @@ export default function Projects() {
             h-80
             w-80
             rounded-full
-            bg-purple-500/10
+            bg-accent/10
             blur-3xl
           "
         />
@@ -142,7 +143,7 @@ export default function Projects() {
             h-96
             w-96
             rounded-full
-            bg-purple-700/10
+            bg-accent/10
             blur-3xl
           "
         />
@@ -150,44 +151,13 @@ export default function Projects() {
 
       <div className="relative mx-auto w-full max-w-7xl">
         <div className="mb-12 text-center sm:mb-16">
-          <div
-            className="
-              mx-auto
-              mb-6
-              h-px
-              w-24
-              bg-gradient-to-r
-              from-transparent
-              via-purple-500
-              to-transparent
-            "
+          <Section
+            align="center"
+            title="Projetos"
+            subtitle="Projetos desenvolvidos para consolidar conhecimentos nas tecnologias que estudei."
+            titleClassName="mb-4 text-3xl font-bold text-on-surface sm:text-4xl md:text-5xl"
+            subtitleClassName="mx-auto max-w-2xl text-sm font-medium text-muted sm:text-base"
           />
-
-          <h1
-            className="
-              mb-4
-              text-3xl
-              font-bold
-              text-white
-              sm:text-4xl
-              md:text-5xl
-            "
-          >
-            Projetos
-          </h1>
-
-          <p
-            className="
-              mx-auto
-              max-w-2xl
-              text-sm
-              font-medium
-              text-zinc-400
-              sm:text-base
-            "
-          >
-            Projetos desenvolvidos para consolidar conhecimentos nas tecnologias que estudei.
-          </p>
         </div>
 
         <div
