@@ -10,6 +10,7 @@ export const en: typeof pt = {
     about: "About me",
     contact: "Contact",
     openMenu: "Open menu",
+    selectLanguage: "Select language",
   },
   common: {
     downloadCV: "Download CV",

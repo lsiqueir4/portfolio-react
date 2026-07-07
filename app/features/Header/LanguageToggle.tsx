@@ -1,13 +1,15 @@
+import { useTranslation } from "react-i18next";
 import { useLanguage } from "~/hooks/useLanguage";
 
 export function LanguageToggle() {
+  const { t } = useTranslation();
   const [language, setLanguage] = useLanguage();
   const isPt = language === "pt";
 
   return (
     <div
       role="group"
-      aria-label="Selecionar idioma"
+      aria-label={t("header.selectLanguage")}
       className="
         flex
         items-center

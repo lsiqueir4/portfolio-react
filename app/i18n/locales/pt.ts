@@ -9,6 +9,7 @@ export const pt = {
     about: "Quem sou eu",
     contact: "Contato",
     openMenu: "Abrir menu",
+    selectLanguage: "Selecionar idioma",
   },
   common: {
     downloadCV: "Baixar CV",
