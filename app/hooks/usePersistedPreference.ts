@@ -33,9 +33,13 @@ function createStore<T extends string>(
   let value: T = serverSnapshot;
 
   if (typeof window !== "undefined") {
-    const stored = window.localStorage.getItem(storageKey);
-    if (stored && (validValues as readonly string[]).includes(stored)) {
-      value = stored as T;
+    try {
+      const stored = window.localStorage.getItem(storageKey);
+      if (stored && (validValues as readonly string[]).includes(stored)) {
+        value = stored as T;
+      }
+    } catch {
+      // localStorage unavailable (e.g. Safari "Block All Cookies") — fall back to detectBrowserDefault()
     }
   }
 
@@ -49,7 +53,11 @@ function createStore<T extends string>(
     set: (next: T) => {
       if (next === value) return;
       value = next;
-      window.localStorage.setItem(storageKey, next);
+      try {
+        window.localStorage.setItem(storageKey, next);
+      } catch {
+        // ignore — theme still applies for this session via applySideEffect
+      }
       applySideEffect(next);
       listeners.forEach((listener) => listener());
     },
