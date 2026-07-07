@@ -15,4 +15,11 @@ export const en: typeof pt = {
     downloadCV: "Download CV",
     contactCTA: "Get in touch",
   },
+  hero: {
+    badge: "Available for opportunities",
+    greeting: "Hello, I'm",
+    role: "Full-Stack Developer",
+    intro:
+      "Developer with experience in REST APIs, banking integrations, credit products, and modern web applications using Python, Flask, React, and TypeScript.",
+  },
 };

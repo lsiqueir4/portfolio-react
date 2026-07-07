@@ -14,4 +14,11 @@ export const pt = {
     downloadCV: "Baixar CV",
     contactCTA: "Entre em contato",
   },
+  hero: {
+    badge: "Disponível para oportunidades",
+    greeting: "Olá, eu sou",
+    role: "Desenvolvedor Full-Stack",
+    intro:
+      "Desenvolvedor com experiência em APIs REST, integrações bancárias, produtos de crédito e aplicações web modernas utilizando Python, Flask, React e TypeScript.",
+  },
 };

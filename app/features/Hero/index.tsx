@@ -1,11 +1,14 @@
 import profile from "~/assets/profile.png";
 import { Download, Send } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import TechBadge from "~/shared/TechBadge";
 import Button from "~/shared/Button";
 import { techs } from "./data";
 import { CONTACTS } from "~/constants";
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="inicio"
@@ -90,10 +93,12 @@ export default function Hero() {
               md:self-start
             "
           >
-            Disponível para oportunidades
+            {t("hero.badge")}
           </div>
 
-          <p className="mb-2 text-sm font-medium text-accent-hover sm:text-base">Olá, eu sou</p>
+          <p className="mb-2 text-sm font-medium text-accent-hover sm:text-base">
+            {t("hero.greeting")}
+          </p>
 
           <h1
             className="
@@ -117,7 +122,7 @@ export default function Hero() {
               sm:text-xl
             "
           >
-            Desenvolvedor Full-Stack
+            {t("hero.role")}
           </h2>
 
           <p
@@ -130,8 +135,7 @@ export default function Hero() {
               md:text-lg
             "
           >
-            Desenvolvedor com experiência em APIs REST, integrações bancárias, produtos de crédito e
-            aplicações web modernas utilizando Python, Flask, React e TypeScript.
+            {t("hero.intro")}
           </p>
 
           <div
@@ -168,7 +172,7 @@ export default function Hero() {
               icon={<Download size={18} />}
               className="rounded-lg px-5 py-3 font-bold w-full sm:w-auto"
             >
-              Baixar CV
+              {t("common.downloadCV")}
             </Button>
 
             <Button
@@ -177,7 +181,7 @@ export default function Hero() {
               icon={<Send size={18} />}
               className="rounded-lg px-5 py-3 font-bold w-full sm:w-auto"
             >
-              Entre em contato
+              {t("common.contactCTA")}
             </Button>
           </div>
         </div>
