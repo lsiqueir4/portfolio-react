@@ -151,7 +151,7 @@ export default function Contacts() {
                     text-muted
                     transition-colors
                     duration-300
-                    group-hover:text-muted
+                    group-hover:text-muted-hover
                     sm:text-base
                   "
                 >
@@ -211,7 +211,7 @@ export default function Contacts() {
                     text-muted
                     transition-colors
                     duration-300
-                    group-hover:text-muted
+                    group-hover:text-muted-hover
                     sm:text-base
                   "
                 >
@@ -272,7 +272,7 @@ export default function Contacts() {
                     text-muted
                     transition-colors
                     duration-300
-                    group-hover:text-muted
+                    group-hover:text-muted-hover
                     sm:text-base
                   "
                 >
