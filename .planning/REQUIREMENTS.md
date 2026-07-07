@@ -7,9 +7,9 @@
 
 ### Theme (CSS/Component Centralization)
 
-- [ ] **THEME-01**: All hardcoded color utility classes (`purple-400/500`, `zinc-300/400/900/950`, `gray-950`, etc.) scattered across Header, Hero, AboutMe, Projects, Contacts, Footer, and TechBadge are replaced with centralized semantic tokens (Tailwind v4 `@theme` config: `bg-surface`, `text-accent`, `text-on-surface`, etc.)
-- [ ] **THEME-02**: Tailwind v4 dark-mode variant mechanism (`@custom-variant dark (&:where(.dark, .dark *));`) is established in `app.css`, replacing the removed `tailwind.config.js` `darkMode` option
-- [ ] **THEME-03**: Repeated component-level patterns (not just colors) across feature folders are de-duplicated where doing so doesn't change visual output or structure
+- [x] **THEME-01**: All hardcoded color utility classes (`purple-400/500`, `zinc-300/400/900/950`, `gray-950`, etc.) scattered across Header, Hero, AboutMe, Projects, Contacts, Footer, and TechBadge are replaced with centralized semantic tokens (Tailwind v4 `@theme` config: `bg-surface`, `text-accent`, `text-on-surface`, etc.)
+- [x] **THEME-02**: Tailwind v4 dark-mode variant mechanism (`@custom-variant dark (&:where(.dark, .dark *));`) is established in `app.css`, replacing the removed `tailwind.config.js` `darkMode` option
+- [x] **THEME-03**: Repeated component-level patterns (not just colors) across feature folders are de-duplicated where doing so doesn't change visual output or structure
 - [x] **THEME-04**: No visual regression — every page section renders identically to before the refactor (manual verification, since there is no test/visual-regression safety net)
 
 ### Dark Mode
@@ -60,9 +60,9 @@ None — PROJECT.md explicitly scopes this milestone to the four phases above wi
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| THEME-01 | Phase 1 | Pending |
-| THEME-02 | Phase 1 | Pending |
-| THEME-03 | Phase 1 | Pending |
+| THEME-01 | Phase 1 | Complete |
+| THEME-02 | Phase 1 | Complete |
+| THEME-03 | Phase 1 | Complete |
 | THEME-04 | Phase 1 | Complete |
 | DARK-01 | Phase 2 | Pending |
 | DARK-02 | Phase 2 | Pending |
