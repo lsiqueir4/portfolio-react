@@ -22,4 +22,15 @@ export const en: typeof pt = {
     intro:
       "Developer with experience in REST APIs, banking integrations, credit products, and modern web applications using Python, Flask, React, and TypeScript.",
   },
+  contacts: {
+    heading: "Get in Touch",
+    description:
+      "I'm available for opportunities, freelance projects, and networking. Get in touch through the channels below.",
+    whatsapp: "WhatsApp",
+    email: "Email",
+    linkedin: "Linkedin",
+  },
+  footer: {
+    rights: "© {{year}} {{name}}. All rights reserved.",
+  },
 };

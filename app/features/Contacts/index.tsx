@@ -1,8 +1,11 @@
 import { Phone, Mail, ExternalLink } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import Section from "~/shared/Section";
 import { CONTACTS } from "~/constants";
 
 export default function Contacts() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="contacts"
@@ -80,7 +83,7 @@ export default function Contacts() {
               sm:text-4xl
             "
           >
-            Entre em Contato
+            {t("contacts.heading")}
           </h1>
 
           <p
@@ -93,8 +96,7 @@ export default function Contacts() {
               sm:text-base
             "
           >
-            Estou disponível para oportunidades, projetos freelance e networking. Entre em contato
-            pelos canais abaixo.
+            {t("contacts.description")}
           </p>
 
           <div className="space-y-4 sm:space-y-6">
@@ -141,7 +143,9 @@ export default function Contacts() {
               </div>
 
               <div className="min-w-0">
-                <h2 className="text-base font-semibold text-on-surface sm:text-lg">WhatsApp</h2>
+                <h2 className="text-base font-semibold text-on-surface sm:text-lg">
+                  {t("contacts.whatsapp")}
+                </h2>
 
                 <p
                   className="
@@ -201,7 +205,9 @@ export default function Contacts() {
               </div>
 
               <div className="min-w-0">
-                <h2 className="text-base font-semibold text-on-surface sm:text-lg">Email</h2>
+                <h2 className="text-base font-semibold text-on-surface sm:text-lg">
+                  {t("contacts.email")}
+                </h2>
 
                 <p
                   className="
@@ -263,7 +269,9 @@ export default function Contacts() {
               </div>
 
               <div className="min-w-0">
-                <h2 className="text-base font-semibold text-on-surface sm:text-lg">Linkedin</h2>
+                <h2 className="text-base font-semibold text-on-surface sm:text-lg">
+                  {t("contacts.linkedin")}
+                </h2>
 
                 <p
                   className="

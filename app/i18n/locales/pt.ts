@@ -21,4 +21,15 @@ export const pt = {
     intro:
       "Desenvolvedor com experiência em APIs REST, integrações bancárias, produtos de crédito e aplicações web modernas utilizando Python, Flask, React e TypeScript.",
   },
+  contacts: {
+    heading: "Entre em Contato",
+    description:
+      "Estou disponível para oportunidades, projetos freelance e networking. Entre em contato pelos canais abaixo.",
+    whatsapp: "WhatsApp",
+    email: "Email",
+    linkedin: "Linkedin",
+  },
+  footer: {
+    rights: "© {{year}} {{name}}. Todos os direitos reservados.",
+  },
 };

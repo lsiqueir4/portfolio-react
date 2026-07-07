@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next";
 import { CONTACTS } from "~/constants";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer
       className="
@@ -19,7 +22,7 @@ export default function Footer() {
         "
       >
         <p className="text-sm text-muted">
-          © {new Date().getFullYear()} {CONTACTS.fullName}. Todos os direitos reservados.
+          {t("footer.rights", { year: new Date().getFullYear(), name: CONTACTS.fullName })}
         </p>
       </div>
     </footer>
