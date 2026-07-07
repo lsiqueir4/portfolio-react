@@ -25,7 +25,7 @@ findings:
   warning: 3
   info: 3
   total: 7
-status: issues_found
+status: issues_found_critical_fixed
 ---
 
 # Phase 01: Code Review Report
@@ -43,7 +43,7 @@ The token migration is largely mechanical and correct (literal `purple-*`/`zinc-
 
 ## Critical Issues
 
-### CR-01: Token migration silently removes hover-state color feedback on all three Contacts cards
+### CR-01: Token migration silently removes hover-state color feedback on all three Contacts cards — **FIXED** (commit `2d42682`)
 
 **File:** `app/features/Contacts/index.tsx:146-159, 206-219, 268-280`
 **Issue:** Before the migration, each contact card's description text used `text-zinc-400` at rest and `group-hover:text-zinc-300` on hover — a real, visible lightening on hover (WhatsApp number, email address, and "Leandro Siqueira" under LinkedIn). Both `zinc-400` and `zinc-300` were mapped to the same `text-muted` token, so all three cards now read:

@@ -15,6 +15,7 @@ Replace scattered hardcoded color utility classes (`purple-400/500`, `zinc-300/4
 
 ### Token Set
 - **D-01:** Use the 7 semantic tokens proposed by research (`.planning/research/ARCHITECTURE.md`): `surface`, `surface-elevated`, `on-surface`, `muted`, `accent`, `accent-hover`, `border-subtle` — no change to this set or naming requested.
+- **D-01a (amendment, post-execution):** Code review (01-REVIEW.md CR-01) found that mapping both `zinc-400` and `zinc-300` onto the single `muted` token silently killed a real hover-state color change on the Contacts cards, violating THEME-04. User approved adding an 8th token, `muted-hover` (`zinc-300`), to restore it — the only deliberate exception to D-01's "no change to this set" lock.
 
 ### Component De-duplication Scope
 - **D-02:** Extract the repeated section wrapper (title + spacing/padding pattern currently duplicated across AboutMe, Projects, Contacts) into a shared component (e.g. `app/shared/Section.tsx`), reused by all three — same visual output, no structural change to the page.
