@@ -11,23 +11,23 @@ export default function TechBadge({ Icon, name }: TechBadgeProps) {
       className="
         inline-flex items-center gap-2
         rounded-full
-        border border-purple-500/20
-        bg-purple-500/10
+        border border-border-subtle/20
+        bg-accent/10
         px-2.5 py-1.5
         sm:px-3 sm:py-2
         transition-all
-        hover:border-purple-400/40
-        hover:bg-purple-500/20
+        hover:border-accent-hover/40
+        hover:bg-accent/20
       "
     >
-      <Icon className="shrink-0 text-purple-300 text-base sm:text-lg" />
+      <Icon className="shrink-0 text-accent-hover text-base sm:text-lg" />
 
       <span
         className="
           text-xs
           sm:text-sm
           font-medium
-          text-zinc-300
+          text-muted
           whitespace-nowrap
         "
       >
