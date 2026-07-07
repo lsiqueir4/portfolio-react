@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 
+import Section from "~/shared/Section";
 import TechBadge from "~/shared/TechBadge";
 import type { Experience } from "./types";
 import { experiences, frontEndTechs, backEndTechs, courses, toolsTechs } from "./data";
@@ -11,7 +12,7 @@ function SectionTitle({ children }: { children: ReactNode }) {
         mb-5
         text-lg
         font-semibold
-        text-white
+        text-on-surface
         sm:text-xl
       "
     >
@@ -26,16 +27,16 @@ function InfoCard({ children }: { children: ReactNode }) {
       className="
         rounded-2xl
         border
-        border-purple-500/10
-        bg-zinc-900/40
+        border-border-subtle/10
+        bg-surface-elevated/40
         p-5
         sm:p-6
         backdrop-blur-sm
         transition-all
         duration-300
-        hover:border-purple-500/20
+        hover:border-border-subtle/20
         hover:shadow-lg
-        hover:shadow-purple-500/10
+        hover:shadow-accent/10
       "
     >
       {children}
@@ -49,7 +50,7 @@ function ExperienceCard({ company, role, startDate, endDate, activities }: Exper
       className="
         relative
         border-l-2
-        border-purple-500/20
+        border-border-subtle/20
         pl-6
         sm:pl-8
       "
@@ -63,8 +64,8 @@ function ExperienceCard({ company, role, startDate, endDate, activities }: Exper
           w-4
           rounded-full
           border-2
-          border-zinc-950
-          bg-purple-400
+          border-surface
+          bg-accent-hover
         "
       />
 
@@ -73,16 +74,16 @@ function ExperienceCard({ company, role, startDate, endDate, activities }: Exper
           className="
             text-base
             font-semibold
-            text-white
+            text-on-surface
             sm:text-lg
           "
         >
           {company}
         </h3>
 
-        <p className="font-medium text-purple-300">{role}</p>
+        <p className="font-medium text-accent-hover">{role}</p>
 
-        <p className="mt-1 text-sm font-medium text-zinc-500">
+        <p className="mt-1 text-sm font-medium text-muted">
           {startDate} • {endDate}
         </p>
       </div>
@@ -95,7 +96,7 @@ function ExperienceCard({ company, role, startDate, endDate, activities }: Exper
               text-sm
               leading-relaxed
               font-medium
-              text-zinc-400
+              text-muted
             "
           >
             • {activity}
@@ -114,7 +115,7 @@ export default function AboutMe() {
         relative
         overflow-hidden
         min-h-screen
-        bg-zinc-950
+        bg-surface
         px-4
         py-16
         sm:px-6
@@ -132,7 +133,7 @@ export default function AboutMe() {
             h-80
             w-80
             rounded-full
-            bg-purple-500/10
+            bg-accent/10
             blur-3xl
           "
         />
@@ -145,7 +146,7 @@ export default function AboutMe() {
             h-96
             w-96
             rounded-full
-            bg-purple-700/10
+            bg-accent/10
             blur-3xl
           "
         />
@@ -153,59 +154,12 @@ export default function AboutMe() {
 
       <div className="relative mx-auto w-full max-w-6xl">
         <div className="mb-12 sm:mb-16">
-          <div
-            className="
-              mb-6
-              h-px
-              w-24
-              bg-gradient-to-r
-              from-transparent
-              via-purple-500
-              to-transparent
-            "
+          <Section
+            align="left"
+            eyebrow="Sobre Mim"
+            title="Quem sou eu"
+            subtitle="Desenvolvedor Full Stack com mais de 3 anos de experiência no desenvolvimento de produtos de crédito para uma fintech. Possuo sólida atuação em backend e atualmente estou aprimorando minhas competências em frontend estudando JavaScript, React e Next.js."
           />
-
-          <span
-            className="
-              mb-3
-              inline-block
-              text-sm
-              font-medium
-              uppercase
-              tracking-widest
-              text-purple-400
-            "
-          >
-            Sobre Mim
-          </span>
-
-          <h1
-            className="
-              mb-6
-              text-3xl
-              font-extrabold
-              text-white
-              sm:text-4xl
-              md:text-5xl
-            "
-          >
-            Quem sou eu
-          </h1>
-
-          <p
-            className="
-              max-w-3xl
-              text-base
-              leading-relaxed
-              font-medium
-              text-zinc-400
-              sm:text-lg
-            "
-          >
-            Desenvolvedor Full Stack com mais de 3 anos de experiência no desenvolvimento de
-            produtos de crédito para uma fintech. Possuo sólida atuação em backend e atualmente
-            estou aprimorando minhas competências em frontend estudando JavaScript, React e Next.js.
-          </p>
         </div>
 
         <div
@@ -221,11 +175,11 @@ export default function AboutMe() {
             <SectionTitle>Formação Acadêmica</SectionTitle>
 
             <div className="space-y-2">
-              <p className="font-bold text-purple-300">Sistemas de Informação</p>
+              <p className="font-bold text-accent-hover">Sistemas de Informação</p>
 
-              <p className="font-medium text-zinc-400">Universidade Metodista de São Paulo</p>
+              <p className="font-medium text-muted">Universidade Metodista de São Paulo</p>
 
-              <p className="font-medium text-zinc-500">Conclusão: 2020</p>
+              <p className="font-medium text-muted">Conclusão: 2020</p>
             </div>
           </InfoCard>
 
@@ -234,15 +188,15 @@ export default function AboutMe() {
 
             <div className="space-y-4">
               <div>
-                <p className="font-medium text-purple-300">Inglês</p>
+                <p className="font-medium text-accent-hover">Inglês</p>
 
-                <p className="text-zinc-400">Nível Avançado (B2)</p>
+                <p className="text-muted">Nível Avançado (B2)</p>
               </div>
 
               <div>
-                <p className="font-medium text-purple-300">Português</p>
+                <p className="font-medium text-accent-hover">Português</p>
 
-                <p className="text-zinc-400">Fluente</p>
+                <p className="text-muted">Fluente</p>
               </div>
             </div>
           </InfoCard>
@@ -270,19 +224,19 @@ export default function AboutMe() {
         >
           <InfoCard>
             <SectionTitle>Principais Tecnologias</SectionTitle>
-            <p className="font-medium text-purple-300 m-4">FrontEnd</p>
+            <p className="font-medium text-accent-hover m-4">FrontEnd</p>
             <div className="flex flex-wrap gap-2 sm:gap-3">
               {frontEndTechs.map(({ icon, name }) => (
                 <TechBadge key={name} Icon={icon} name={name} />
               ))}
             </div>
-            <p className="font-medium text-purple-300 m-4">BackEnd</p>
+            <p className="font-medium text-accent-hover m-4">BackEnd</p>
             <div className="flex flex-wrap gap-2 sm:gap-3">
               {backEndTechs.map(({ icon, name }) => (
                 <TechBadge key={name} Icon={icon} name={name} />
               ))}
             </div>
-            <p className="font-medium text-purple-300 m-4">Ferramentas</p>
+            <p className="font-medium text-accent-hover m-4">Ferramentas</p>
             <div className="flex flex-wrap gap-2 sm:gap-3">
               {toolsTechs.map(({ icon, name }) => (
                 <TechBadge key={name} Icon={icon} name={name} />
@@ -300,16 +254,16 @@ export default function AboutMe() {
                   className="
                     rounded-lg
                     border
-                    border-purple-500/10
-                    bg-zinc-950/50
+                    border-border-subtle/10
+                    bg-surface/50
                     p-4
                     transition-all
                     duration-300
-                    hover:border-purple-500/30
-                    hover:bg-zinc-900/70
+                    hover:border-border-subtle/30
+                    hover:bg-surface-elevated/70
                   "
                 >
-                  <h3 className="font-medium text-white">{course.name}</h3>
+                  <h3 className="font-medium text-on-surface">{course.name}</h3>
 
                   <div
                     className="
@@ -319,7 +273,7 @@ export default function AboutMe() {
                       gap-1
                       text-sm
                       font-medium
-                      text-zinc-400
+                      text-muted
                       sm:flex-row
                       sm:items-center
                       sm:justify-between
