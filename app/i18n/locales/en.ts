@@ -33,6 +33,37 @@ export const en: typeof pt = {
   footer: {
     rights: "© {{year}} {{name}}. All rights reserved.",
   },
+  about: {
+    eyebrow: "About Me",
+    title: "Who I am",
+    subtitle:
+      "Full Stack Developer with over 3 years of experience developing credit products for a fintech. I have a solid background in backend and I'm currently improving my frontend skills by studying JavaScript, React, and Next.js.",
+    education: {
+      heading: "Education",
+      degree: "Information Systems",
+      institution: "Universidade Metodista de São Paulo",
+      completion: "Completion: 2020",
+    },
+    languages: {
+      heading: "Languages",
+      english: "English",
+      englishLevel: "Advanced level (B2)",
+      portuguese: "Portuguese",
+      portugueseLevel: "Fluent",
+    },
+    experience: {
+      heading: "Professional Experience",
+    },
+    technologies: {
+      heading: "Main Technologies",
+      frontend: "FrontEnd",
+      backend: "BackEnd",
+      tools: "Tools",
+    },
+    courses: {
+      heading: "Courses",
+    },
+  },
   projects: {
     title: "Projects",
     subtitle: "Projects developed to consolidate knowledge in the technologies I studied.",

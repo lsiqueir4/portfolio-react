@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 
 import Section from "~/shared/Section";
 import TechBadge from "~/shared/TechBadge";
@@ -108,6 +109,8 @@ function ExperienceCard({ company, role, startDate, endDate, activities }: Exper
 }
 
 export default function AboutMe() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="aboutme"
@@ -156,9 +159,9 @@ export default function AboutMe() {
         <div className="mb-12 sm:mb-16">
           <Section
             align="left"
-            eyebrow="Sobre Mim"
-            title="Quem sou eu"
-            subtitle="Desenvolvedor Full Stack com mais de 3 anos de experiência no desenvolvimento de produtos de crédito para uma fintech. Possuo sólida atuação em backend e atualmente estou aprimorando minhas competências em frontend estudando JavaScript, React e Next.js."
+            eyebrow={t("about.eyebrow")}
+            title={t("about.title")}
+            subtitle={t("about.subtitle")}
           />
         </div>
 
@@ -172,31 +175,31 @@ export default function AboutMe() {
           "
         >
           <InfoCard>
-            <SectionTitle>Formação Acadêmica</SectionTitle>
+            <SectionTitle>{t("about.education.heading")}</SectionTitle>
 
             <div className="space-y-2">
-              <p className="font-bold text-accent-hover">Sistemas de Informação</p>
+              <p className="font-bold text-accent-hover">{t("about.education.degree")}</p>
 
-              <p className="font-medium text-muted">Universidade Metodista de São Paulo</p>
+              <p className="font-medium text-muted">{t("about.education.institution")}</p>
 
-              <p className="font-medium text-muted">Conclusão: 2020</p>
+              <p className="font-medium text-muted">{t("about.education.completion")}</p>
             </div>
           </InfoCard>
 
           <InfoCard>
-            <SectionTitle>Idiomas</SectionTitle>
+            <SectionTitle>{t("about.languages.heading")}</SectionTitle>
 
             <div className="space-y-4">
               <div>
-                <p className="font-medium text-accent-hover">Inglês</p>
+                <p className="font-medium text-accent-hover">{t("about.languages.english")}</p>
 
-                <p className="text-muted">Nível Avançado (B2)</p>
+                <p className="text-muted">{t("about.languages.englishLevel")}</p>
               </div>
 
               <div>
-                <p className="font-medium text-accent-hover">Português</p>
+                <p className="font-medium text-accent-hover">{t("about.languages.portuguese")}</p>
 
-                <p className="text-muted">Fluente</p>
+                <p className="text-muted">{t("about.languages.portugueseLevel")}</p>
               </div>
             </div>
           </InfoCard>
@@ -204,7 +207,7 @@ export default function AboutMe() {
 
         <div className="mb-6">
           <InfoCard>
-            <SectionTitle>Experiência Profissional</SectionTitle>
+            <SectionTitle>{t("about.experience.heading")}</SectionTitle>
 
             <div className="space-y-10">
               {experiences.map((experience) => (
@@ -223,20 +226,20 @@ export default function AboutMe() {
           "
         >
           <InfoCard>
-            <SectionTitle>Principais Tecnologias</SectionTitle>
-            <p className="font-medium text-accent-hover m-4">FrontEnd</p>
+            <SectionTitle>{t("about.technologies.heading")}</SectionTitle>
+            <p className="font-medium text-accent-hover m-4">{t("about.technologies.frontend")}</p>
             <div className="flex flex-wrap gap-2 sm:gap-3">
               {frontEndTechs.map(({ icon, name }) => (
                 <TechBadge key={name} Icon={icon} name={name} />
               ))}
             </div>
-            <p className="font-medium text-accent-hover m-4">BackEnd</p>
+            <p className="font-medium text-accent-hover m-4">{t("about.technologies.backend")}</p>
             <div className="flex flex-wrap gap-2 sm:gap-3">
               {backEndTechs.map(({ icon, name }) => (
                 <TechBadge key={name} Icon={icon} name={name} />
               ))}
             </div>
-            <p className="font-medium text-accent-hover m-4">Ferramentas</p>
+            <p className="font-medium text-accent-hover m-4">{t("about.technologies.tools")}</p>
             <div className="flex flex-wrap gap-2 sm:gap-3">
               {toolsTechs.map(({ icon, name }) => (
                 <TechBadge key={name} Icon={icon} name={name} />
@@ -245,7 +248,7 @@ export default function AboutMe() {
           </InfoCard>
 
           <InfoCard>
-            <SectionTitle>Cursos</SectionTitle>
+            <SectionTitle>{t("about.courses.heading")}</SectionTitle>
 
             <div className="space-y-4">
               {courses.map((course) => (

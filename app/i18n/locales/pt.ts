@@ -32,6 +32,37 @@ export const pt = {
   footer: {
     rights: "© {{year}} {{name}}. Todos os direitos reservados.",
   },
+  about: {
+    eyebrow: "Sobre Mim",
+    title: "Quem sou eu",
+    subtitle:
+      "Desenvolvedor Full Stack com mais de 3 anos de experiência no desenvolvimento de produtos de crédito para uma fintech. Possuo sólida atuação em backend e atualmente estou aprimorando minhas competências em frontend estudando JavaScript, React e Next.js.",
+    education: {
+      heading: "Formação Acadêmica",
+      degree: "Sistemas de Informação",
+      institution: "Universidade Metodista de São Paulo",
+      completion: "Conclusão: 2020",
+    },
+    languages: {
+      heading: "Idiomas",
+      english: "Inglês",
+      englishLevel: "Nível Avançado (B2)",
+      portuguese: "Português",
+      portugueseLevel: "Fluente",
+    },
+    experience: {
+      heading: "Experiência Profissional",
+    },
+    technologies: {
+      heading: "Principais Tecnologias",
+      frontend: "FrontEnd",
+      backend: "BackEnd",
+      tools: "Ferramentas",
+    },
+    courses: {
+      heading: "Cursos",
+    },
+  },
   projects: {
     title: "Projetos",
     subtitle: "Projetos desenvolvidos para consolidar conhecimentos nas tecnologias que estudei.",
