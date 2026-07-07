@@ -33,4 +33,24 @@ export const en: typeof pt = {
   footer: {
     rights: "© {{year}} {{name}}. All rights reserved.",
   },
+  projects: {
+    title: "Projects",
+    subtitle: "Projects developed to consolidate knowledge in the technologies I studied.",
+    viewCode: "View code",
+    portfolio: {
+      title: "Portfolio",
+      description:
+        "Portfolio built with React to showcase personal projects and contact information.",
+    },
+    bankApi: {
+      title: "Digital Bank REST API",
+      description:
+        "REST API built with Python, integrated with a digital bank's staging environment.",
+    },
+    prescriptionApi: {
+      title: "Medical Prescription Generation REST API",
+      description:
+        "API built with Python featuring user authentication and permission logic that generates PDF documents for medical prescriptions.",
+    },
+  },
 };

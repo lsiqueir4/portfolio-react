@@ -1,10 +1,13 @@
 import { GitBranch } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import type { ProjectContainerProps } from "./types";
 import Section from "~/shared/Section";
 import TechBadge from "~/shared/TechBadge";
 import { projects } from "./data";
 
 function ProjectContainer({ title, description, usedTechs, link, image }: ProjectContainerProps) {
+  const { t } = useTranslation();
+
   return (
     <div
       className="
@@ -98,7 +101,7 @@ function ProjectContainer({ title, description, usedTechs, link, image }: Projec
           "
         >
           <GitBranch size={18} />
-          Ver código
+          {t("projects.viewCode")}
         </a>
       </div>
     </div>
@@ -106,6 +109,8 @@ function ProjectContainer({ title, description, usedTechs, link, image }: Projec
 }
 
 export default function Projects() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="projetos"
@@ -153,8 +158,8 @@ export default function Projects() {
         <div className="mb-12 text-center sm:mb-16">
           <Section
             align="center"
-            title="Projetos"
-            subtitle="Projetos desenvolvidos para consolidar conhecimentos nas tecnologias que estudei."
+            title={t("projects.title")}
+            subtitle={t("projects.subtitle")}
             titleClassName="mb-4 text-3xl font-bold text-on-surface sm:text-4xl md:text-5xl"
             subtitleClassName="mx-auto max-w-2xl text-sm font-medium text-muted sm:text-base"
           />
@@ -171,8 +176,9 @@ export default function Projects() {
         >
           {projects.map((project) => (
             <ProjectContainer
-              title={project.title}
-              description={project.description}
+              key={project.id}
+              title={t(`projects.${project.id}.title`)}
+              description={t(`projects.${project.id}.description`)}
               usedTechs={project.usedTechs}
               link={project.link}
               image={project.image}

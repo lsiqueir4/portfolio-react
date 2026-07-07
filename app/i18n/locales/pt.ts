@@ -32,4 +32,24 @@ export const pt = {
   footer: {
     rights: "© {{year}} {{name}}. Todos os direitos reservados.",
   },
+  projects: {
+    title: "Projetos",
+    subtitle: "Projetos desenvolvidos para consolidar conhecimentos nas tecnologias que estudei.",
+    viewCode: "Ver código",
+    portfolio: {
+      title: "Portfólio",
+      description:
+        "Portfólio desenvolvido em React para divulgar projetos pessoais e informações para contato.",
+    },
+    bankApi: {
+      title: "API REST Banco digital",
+      description:
+        "API Rest desenvolvida em Python com a integração ao ambiente de homologação de um banco digital.",
+    },
+    prescriptionApi: {
+      title: "API REST Geração de receitas médicas",
+      description:
+        "API desenvolvida em Python com autenticação de usuários e lógica de permissionamento que gera documentos em PDF para receitas médicas.",
+    },
+  },
 };

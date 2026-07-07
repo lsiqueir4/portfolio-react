@@ -1,4 +1,4 @@
-import type { ProjectContainerProps } from "./types";
+import type { ProjectData } from "./types";
 import {
   SiReact,
   SiJavascript,
@@ -17,11 +17,9 @@ import BankApi from "~/assets/projects/bank-api.png";
 import OnlinePrescriptionApi from "~/assets/projects/online-prescription-api.png";
 import { CONTACTS } from "~/constants";
 
-export const projects: ProjectContainerProps[] = [
+export const projects: ProjectData[] = [
   {
-    title: "Portfólio",
-    description:
-      "Portfólio desenvolvido em React para divulgar projetos pessoais e informações para contato.",
+    id: "portfolio",
     usedTechs: [
       { name: "React", icon: SiReact },
       { name: "JavaScript", icon: SiJavascript },
@@ -32,9 +30,7 @@ export const projects: ProjectContainerProps[] = [
     image: Portfolio,
   },
   {
-    title: "API REST Banco digital",
-    description:
-      "API Rest desenvolvida em Python com a integração ao ambiente de homologação de um banco digital.",
+    id: "bankApi",
     usedTechs: [
       { name: "Python", icon: SiPython },
       { name: "Flask", icon: SiFlask },
@@ -48,9 +44,7 @@ export const projects: ProjectContainerProps[] = [
     image: BankApi,
   },
   {
-    title: "API REST Geração de receitas médicas",
-    description:
-      "API desenvolvida em Python com autenticação de usuários e lógica de permissionamento que gera documentos em PDF para receitas médicas.",
+    id: "prescriptionApi",
     usedTechs: [
       { name: "Python", icon: SiPython },
       { name: "Flask", icon: SiFlask },

@@ -12,3 +12,10 @@ export type ProjectContainerProps = {
   link: string;
   image: string;
 };
+
+export type ProjectData = {
+  id: string;
+  usedTechs: Tech[];
+  link: string;
+  image: string;
+};
