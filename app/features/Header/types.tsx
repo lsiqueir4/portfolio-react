@@ -5,9 +5,3 @@ export type HeaderButtonProps = {
   href?: string;
   onClick?: () => void;
 };
-
-export type ActionButtonProps = {
-  children: ReactNode;
-  href?: string;
-  icon?: ReactNode;
-};

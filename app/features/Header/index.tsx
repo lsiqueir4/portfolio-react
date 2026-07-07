@@ -1,7 +1,8 @@
 import { useState } from "react";
-import type { HeaderButtonProps, ActionButtonProps } from "./types";
+import type { HeaderButtonProps } from "./types";
 import { Download, Menu, Send, X } from "lucide-react";
 import { CONTACTS } from "~/constants";
+import Button from "~/shared/Button";
 
 function HeaderButton({ children, href = "#", onClick }: HeaderButtonProps) {
   return (
@@ -13,16 +14,16 @@ function HeaderButton({ children, href = "#", onClick }: HeaderButtonProps) {
           relative
           text-sm
           font-medium
-          text-zinc-300
+          text-muted
           transition-all
           duration-300
-          hover:text-purple-400
+          hover:text-accent-hover
           after:absolute
           after:-bottom-1
           after:left-0
           after:h-[2px]
           after:w-0
-          after:bg-purple-400
+          after:bg-accent-hover
           after:transition-all
           after:duration-300
           hover:after:w-full
@@ -31,38 +32,6 @@ function HeaderButton({ children, href = "#", onClick }: HeaderButtonProps) {
         {children}
       </a>
     </li>
-  );
-}
-
-function ActionButton({ children, href = "#", icon }: ActionButtonProps) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="
-        inline-flex
-        items-center
-        justify-center
-        gap-2
-        rounded-xl
-        bg-purple-500
-        px-4
-        py-2.5
-        text-sm
-        font-semibold
-        text-white
-        transition-all
-        duration-300
-        hover:scale-105
-        hover:bg-purple-400
-        hover:shadow-lg
-        hover:shadow-purple-500/30
-      "
-    >
-      {icon}
-      {children}
-    </a>
   );
 }
 
@@ -80,8 +49,8 @@ export function Header() {
         top-0
         z-50
         border-b
-        border-purple-500/10
-        bg-zinc-950/70
+        border-border-subtle/10
+        bg-surface/70
         backdrop-blur-xl
       "
     >
@@ -107,12 +76,12 @@ export function Header() {
               text-xl
               font-extrabold
               tracking-tight
-              text-white
+              text-on-surface
               transition-colors
-              hover:text-purple-400
+              hover:text-accent-hover
             "
           >
-            <span className="text-purple-400">&lt;/&gt;</span>
+            <span className="text-accent-hover">&lt;/&gt;</span>
             Leandro.dev
           </a>
 
@@ -136,20 +105,26 @@ export function Header() {
                 py-2
                 text-sm
                 font-medium
-                text-zinc-300
+                text-muted
                 transition-all
                 duration-300
-                hover:bg-purple-500/10
-                hover:text-purple-400
+                hover:bg-accent/10
+                hover:text-accent-hover
               "
             >
               <Send size={18} />
               Contato
             </a>
 
-            <ActionButton href={CONTACTS.cvDownloadLink} icon={<Download size={18} />}>
+            <Button
+              variant="primary"
+              external
+              href={CONTACTS.cvDownloadLink}
+              icon={<Download size={18} />}
+              className="rounded-xl px-[15px] py-[9px] text-sm font-semibold"
+            >
               Baixar CV
-            </ActionButton>
+            </Button>
           </div>
 
           <button
@@ -157,14 +132,14 @@ export function Header() {
             className="
               rounded-xl
               border
-              border-purple-500/10
+              border-border-subtle/10
               p-2.5
-              text-zinc-300
+              text-muted
               transition-all
               duration-300
-              hover:border-purple-500/30
-              hover:bg-purple-500/10
-              hover:text-purple-400
+              hover:border-border-subtle/30
+              hover:bg-accent/10
+              hover:text-accent-hover
               md:hidden
             "
             aria-label="Abrir menu"
@@ -189,8 +164,8 @@ export function Header() {
               gap-2
               rounded-2xl
               border
-              border-purple-500/10
-              bg-zinc-900/80
+              border-border-subtle/10
+              bg-surface-elevated/80
               p-4
               backdrop-blur-md
             "
@@ -204,11 +179,11 @@ export function Header() {
                 py-3
                 text-sm
                 font-medium
-                text-zinc-300
+                text-muted
                 transition-all
                 duration-300
-                hover:bg-purple-500/10
-                hover:text-purple-400
+                hover:bg-accent/10
+                hover:text-accent-hover
               "
             >
               Início
@@ -223,11 +198,11 @@ export function Header() {
                 py-3
                 text-sm
                 font-medium
-                text-zinc-300
+                text-muted
                 transition-all
                 duration-300
-                hover:bg-purple-500/10
-                hover:text-purple-400
+                hover:bg-accent/10
+                hover:text-accent-hover
               "
             >
               Projetos
@@ -242,11 +217,11 @@ export function Header() {
                 py-3
                 text-sm
                 font-medium
-                text-zinc-300
+                text-muted
                 transition-all
                 duration-300
-                hover:bg-purple-500/10
-                hover:text-purple-400
+                hover:bg-accent/10
+                hover:text-accent-hover
               "
             >
               Quem sou eu
@@ -264,11 +239,11 @@ export function Header() {
                 py-3
                 text-sm
                 font-medium
-                text-zinc-300
+                text-muted
                 transition-all
                 duration-300
-                hover:bg-purple-500/10
-                hover:text-purple-400
+                hover:bg-accent/10
+                hover:text-accent-hover
               "
             >
               <Send size={18} />
@@ -276,9 +251,15 @@ export function Header() {
             </a>
 
             <div className="pt-2">
-              <ActionButton href={CONTACTS.cvDownloadLink} icon={<Download size={18} />}>
+              <Button
+                variant="primary"
+                external
+                href={CONTACTS.cvDownloadLink}
+                icon={<Download size={18} />}
+                className="rounded-xl px-[15px] py-[9px] text-sm font-semibold"
+              >
                 Baixar CV
-              </ActionButton>
+              </Button>
             </div>
           </div>
         </div>
