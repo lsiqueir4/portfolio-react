@@ -33,7 +33,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Every page section renders visually identical to before the refactor (manual before/after verification, since there is no automated visual-regression net)
   4. Repeated component-level patterns across feature folders are de-duplicated without changing visual output or structure
 
-**Plans**: 2/5 plans executed
+**Plans**: 4/5 plans executed
 **Wave 1**
 
 - [x] 01-01-PLAN.md — Playwright visual-regression harness + pre-refactor baseline capture (safety net)
@@ -44,8 +44,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
-- [ ] 01-03-PLAN.md — Migrate Header + Hero (consume Button) + Footer + TechBadge to tokens
-- [ ] 01-04-PLAN.md — Migrate AboutMe + Projects + Contacts (consume Section) to tokens
+- [x] 01-03-PLAN.md — Migrate Header + Hero (consume Button) + Footer + TechBadge to tokens
+- [x] 01-04-PLAN.md — Migrate AboutMe + Projects + Contacts (consume Section) to tokens
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
@@ -108,7 +108,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Theme/CSS Token Centralization | 2/5 | In Progress|  |
+| 1. Theme/CSS Token Centralization | 4/5 | In Progress|  |
 | 2. Dark Mode Toggle | 0/TBD | Not started | - |
 | 3. Language Toggle (i18n) | 0/TBD | Not started | - |
 | 4. Bilingual README | 0/TBD | Not started | - |

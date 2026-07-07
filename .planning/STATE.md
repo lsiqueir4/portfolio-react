@@ -6,14 +6,14 @@ current_phase: 01
 current_phase_name: theme-css-token-centralization
 status: executing
 stopped_at: Phase 1 context gathered
-last_updated: "2026-07-07T00:02:04.423Z"
+last_updated: "2026-07-07T00:21:17.774Z"
 last_activity: 2026-07-06
 last_activity_desc: Phase 01 execution started
 progress:
   total_phases: 4
   completed_phases: 0
   total_plans: 5
-  completed_plans: 2
+  completed_plans: 4
   percent: 0
 ---
 
@@ -29,7 +29,7 @@ See: .planning/PROJECT.md (updated 2026-07-06)
 ## Current Position
 
 Phase: 01 (theme-css-token-centralization) — EXECUTING
-Plan: 3 of 5
+Plan: 5 of 5
 Status: Ready to execute
 Last activity: 2026-07-06 — Phase 01 execution started
 
@@ -57,6 +57,8 @@ Progress: [░░░░░░░░░░] 0%
 *Updated after each plan completion*
 | Phase 01 P01 | 22min | 3 tasks | 10 files |
 | Phase 01 P02 | 15min | 3 tasks | 3 files |
+| Phase 01 P03 | 10min | 3 tasks | 6 files |
+| Phase 01 P04 | 15min | 3 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -72,6 +74,10 @@ Recent decisions affecting current work:
 - [Phase ?]: Chromium-only browser install for Playwright harness — sufficient for deterministic visual baselines
 - [Phase ?]: Token values normalize to dominant existing usage (zinc-950/zinc-400/purple-500/purple-400) to minimize visual delta
 - [Phase ?]: Button.tsx/Section.tsx use array.filter(Boolean).join(space) instead of template-literal interpolation to combine class strings, avoiding the Pitfall 6 dynamic-class-name pattern
+- [Phase ?]: Header CV buttons compensate padding (px-[15px] py-[9px]) for shared Button's built-in border to preserve exact pre-refactor box size
+- [Phase ?]: AboutMe's title block needed no titleClassName/subtitleClassName override -- Section's defaults already match AboutMe's original heading/subtitle classes exactly
+- [Phase ?]: Projects' title block required titleClassName/subtitleClassName overrides (font-bold mb-4 / mx-auto max-w-2xl text-sm sm:text-base) to preserve its distinct heading/subtitle sizing vs Section defaults
+- [Phase ?]: Contacts uses Section align=center divider-only (no title/subtitle/eyebrow props) -- only the standalone gradient divider was de-duplicated, card structure with h1/subtitle unchanged
 
 ### Pending Todos
 
@@ -93,6 +99,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-07T00:01:44.379Z
+Last session: 2026-07-07T00:21:02.876Z
 Stopped at: Phase 1 context gathered
 Resume file: .planning/phases/01-theme-css-token-centralization/01-CONTEXT.md
