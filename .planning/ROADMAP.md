@@ -14,9 +14,9 @@ This milestone retrofits an existing single-route SSR portfolio (React 19 + Reac
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Theme/CSS Token Centralization** - Replace scattered hardcoded color utility classes with centralized semantic tokens and wire the Tailwind v4 dark-mode variant mechanism, with zero visual regression (completed 2026-07-07)
-- [ ] **Phase 2: Dark Mode Toggle** - Add a Header sun/moon toggle that defaults to browser preference, persists a manual choice via localStorage, and never flashes the wrong theme
-- [ ] **Phase 3: Language Toggle (i18n)** - Add a Header PT/EN toggle via react-i18next that defaults to browser language, persists a manual choice, and translates every user-facing string 1:1
-- [ ] **Phase 4: Bilingual README** - Rewrite the README as cross-linked PT-BR (`README.md`) and EN (`README.en.md`) versions with feature/tech-stack parity
+- [x] **Phase 2: Dark Mode Toggle** - Add a Header sun/moon toggle that defaults to browser preference, persists a manual choice via localStorage, and never flashes the wrong theme (completed 2026-07-07)
+- [x] **Phase 3: Language Toggle (i18n)** - Add a Header PT/EN toggle via react-i18next that defaults to browser language, persists a manual choice, and translates every user-facing string 1:1 (completed 2026-07-07)
+- [x] **Phase 4: Bilingual README** - Rewrite the README as cross-linked PT-BR (`README.md`) and EN (`README.en.md`) versions with feature/tech-stack parity (completed 2026-07-07)
 
 ## Phase Details
 
@@ -67,7 +67,16 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. The purple accent color remains the primary accent in both light and dark themes — only background/text tokens invert
   5. The "detect default → allow override → persist" logic is implemented as a reusable primitive that Phase 3 reuses for language
 
-**Plans**: TBD
+**Plans**: 2/2 plans complete
+
+**Wave 1**
+
+- [x] 02-01-PLAN.md — Working dark/light toggle: invert app.css tokens, reusable `usePersistedPreference`/`useTheme` hooks, `ThemeToggle` in Header, SSR no-flash script (DARK-01..05)
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
+- [x] 02-02-PLAN.md — Light-mode visual-regression baseline + human sign-off (DARK-02, DARK-04)
+
 **UI hint**: yes
 
 ### Phase 3: Language Toggle (i18n)
@@ -84,7 +93,20 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. Switching language updates every user-facing string across Hero, AboutMe, Projects, Contacts, Header, and Footer — including array-literal content in `data.tsx` files — and updates `document.documentElement.lang` to match
   5. All content, links, and images remain unchanged in both languages — only the language of text changes, including UI-adjacent strings like dates ("Fev 2022" → "Feb 2022") and status labels ("Em andamento" → "In progress")
 
-**Plans**: TBD
+**Plans**: 3/3 plans complete
+
+**Wave 1**
+
+- [x] 03-01-PLAN.md — i18n foundation + working Header PT/EN switcher end-to-end (install i18next/react-i18next, useLanguage reusing usePersistedPreference, LanguageToggle, SSR html-lang wiring, Header translated) (I18N-01..06)
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
+- [x] 03-02-PLAN.md — Translate JSX-only sections: Hero, Contacts, Footer (I18N-06, I18N-08)
+
+**Wave 3** *(blocked on Wave 2 completion — shares locale catalogs)*
+
+- [x] 03-03-PLAN.md — Translate array-heavy sections: Projects + AboutMe incl. data.tsx dates/status ("Fev 2022"→"Feb 2022", "Em andamento"→"In progress") (I18N-06, I18N-07, I18N-08)
+
 **UI hint**: yes
 
 ### Phase 4: Bilingual README
@@ -99,7 +121,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. `README.en.md` (EN) exists as the English counterpart with content parity to `README.md`
   3. Both README files carry a cross-link banner at the top so a reader can jump between language versions
 
-**Plans**: TBD
+**Plans**: 1/1 plans complete
+
+Plans:
+
+- [x] 04-01-PLAN.md — Add MIT LICENSE, rewrite README.md (PT-BR), create README.en.md (EN) with cross-link banner
 
 ## Progress
 
@@ -109,6 +135,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Theme/CSS Token Centralization | 5/5 | Complete    | 2026-07-07 |
-| 2. Dark Mode Toggle | 0/TBD | Not started | - |
-| 3. Language Toggle (i18n) | 0/TBD | Not started | - |
-| 4. Bilingual README | 0/TBD | Not started | - |
+| 2. Dark Mode Toggle | 2/2 | Complete    | 2026-07-07 |
+| 3. Language Toggle (i18n) | 3/3 | Complete    | 2026-07-07 |
+| 4. Bilingual README | 1/1 | Complete    | 2026-07-07 |
