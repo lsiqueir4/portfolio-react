@@ -11,9 +11,8 @@ type Language = (typeof LANGUAGE_VALUES)[number];
 // D-05: any locale that is neither pt-* nor en-* defaults to English.
 function detectBrowserLanguage(): Language {
   if (typeof navigator === "undefined") return "pt";
-  const locale = navigator.language.toLowerCase();
+  const locale = (navigator.language || "").toLowerCase();
   if (locale.startsWith("pt")) return "pt";
-  if (locale.startsWith("en")) return "en";
   return "en";
 }
 
