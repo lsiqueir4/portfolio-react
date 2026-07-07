@@ -1,4 +1,5 @@
 import { Phone, Mail, ExternalLink } from "lucide-react";
+import Section from "~/shared/Section";
 import { CONTACTS } from "~/constants";
 
 export default function Contacts() {
@@ -12,7 +13,7 @@ export default function Contacts() {
         min-h-[80vh]
         items-center
         justify-center
-        bg-zinc-950
+        bg-surface
         px-4
         py-16
         sm:px-6
@@ -29,7 +30,7 @@ export default function Contacts() {
             h-80
             w-80
             rounded-full
-            bg-purple-500/10
+            bg-accent/10
             blur-3xl
           "
         />
@@ -42,7 +43,7 @@ export default function Contacts() {
             h-96
             w-96
             rounded-full
-            bg-purple-700/10
+            bg-accent/10
             blur-3xl
           "
         />
@@ -55,25 +56,14 @@ export default function Contacts() {
           max-w-2xl
         "
       >
-        <div
-          className="
-            mx-auto
-            mb-6
-            h-px
-            w-24
-            bg-gradient-to-r
-            from-transparent
-            via-purple-500
-            to-transparent
-          "
-        />
+        <Section align="center" />
 
         <div
           className="
             rounded-3xl
             border
-            border-purple-500/10
-            bg-zinc-900/40
+            border-border-subtle/10
+            bg-surface-elevated/40
             p-5
             backdrop-blur-sm
             shadow-2xl
@@ -86,7 +76,7 @@ export default function Contacts() {
               mb-3
               text-3xl
               font-bold
-              text-white
+              text-on-surface
               sm:text-4xl
             "
           >
@@ -98,7 +88,7 @@ export default function Contacts() {
               mb-8
               text-sm
               font-medium
-              text-zinc-400
+              text-muted
               sm:mb-10
               sm:text-base
             "
@@ -119,16 +109,16 @@ export default function Contacts() {
                 gap-3
                 rounded-2xl
                 border
-                border-purple-500/10
-                bg-zinc-950/50
+                border-border-subtle/10
+                bg-surface/50
                 p-4
                 transition-all
                 duration-300
                 hover:-translate-y-1
-                hover:border-purple-500/30
-                hover:bg-zinc-900/70
+                hover:border-border-subtle/30
+                hover:bg-surface-elevated/70
                 hover:shadow-lg
-                hover:shadow-purple-500/10
+                hover:shadow-accent/10
                 sm:gap-4
                 sm:p-5
               "
@@ -151,17 +141,17 @@ export default function Contacts() {
               </div>
 
               <div className="min-w-0">
-                <h2 className="text-base font-semibold text-white sm:text-lg">WhatsApp</h2>
+                <h2 className="text-base font-semibold text-on-surface sm:text-lg">WhatsApp</h2>
 
                 <p
                   className="
                     break-words
                     text-sm
                     font-medium
-                    text-zinc-400
+                    text-muted
                     transition-colors
                     duration-300
-                    group-hover:text-zinc-300
+                    group-hover:text-muted
                     sm:text-base
                   "
                 >
@@ -179,16 +169,16 @@ export default function Contacts() {
                 gap-3
                 rounded-2xl
                 border
-                border-purple-500/10
-                bg-zinc-950/50
+                border-border-subtle/10
+                bg-surface/50
                 p-4
                 transition-all
                 duration-300
                 hover:-translate-y-1
-                hover:border-purple-500/30
-                hover:bg-zinc-900/70
+                hover:border-border-subtle/30
+                hover:bg-surface-elevated/70
                 hover:shadow-lg
-                hover:shadow-purple-500/10
+                hover:shadow-accent/10
                 sm:gap-4
                 sm:p-5
               "
@@ -198,8 +188,8 @@ export default function Contacts() {
                   flex-shrink-0
                   rounded-full
                   border
-                  border-purple-400
-                  bg-purple-500/10
+                  border-accent-hover
+                  bg-accent/10
                   p-2.5
                   transition-all
                   duration-300
@@ -207,21 +197,21 @@ export default function Contacts() {
                   sm:p-3
                 "
               >
-                <Mail size={24} className="text-purple-400 sm:h-7 sm:w-7" />
+                <Mail size={24} className="text-accent-hover sm:h-7 sm:w-7" />
               </div>
 
               <div className="min-w-0">
-                <h2 className="text-base font-semibold text-white sm:text-lg">Email</h2>
+                <h2 className="text-base font-semibold text-on-surface sm:text-lg">Email</h2>
 
                 <p
                   className="
                     break-all
                     text-sm
                     font-medium
-                    text-zinc-400
+                    text-muted
                     transition-colors
                     duration-300
-                    group-hover:text-zinc-300
+                    group-hover:text-muted
                     sm:text-base
                   "
                 >
@@ -241,16 +231,16 @@ export default function Contacts() {
                 gap-3
                 rounded-2xl
                 border
-                border-purple-500/10
-                bg-zinc-950/50
+                border-border-subtle/10
+                bg-surface/50
                 p-4
                 transition-all
                 duration-300
                 hover:-translate-y-1
-                hover:border-purple-500/30
-                hover:bg-zinc-900/70
+                hover:border-border-subtle/30
+                hover:bg-surface-elevated/70
                 hover:shadow-lg
-                hover:shadow-purple-500/10
+                hover:shadow-accent/10
                 sm:gap-4
                 sm:p-5
               "
@@ -273,16 +263,16 @@ export default function Contacts() {
               </div>
 
               <div className="min-w-0">
-                <h2 className="text-base font-semibold text-white sm:text-lg">Linkedin</h2>
+                <h2 className="text-base font-semibold text-on-surface sm:text-lg">Linkedin</h2>
 
                 <p
                   className="
                     text-sm
                     font-medium
-                    text-zinc-400
+                    text-muted
                     transition-colors
                     duration-300
-                    group-hover:text-zinc-300
+                    group-hover:text-muted
                     sm:text-base
                   "
                 >
