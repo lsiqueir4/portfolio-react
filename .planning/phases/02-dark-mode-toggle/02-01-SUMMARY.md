@@ -185,3 +185,7 @@ None - no external service configuration required.
 ---
 *Phase: 02-dark-mode-toggle*
 *Completed: 2026-07-07*
+
+## Self-Check: PASSED
+
+All created/modified files confirmed present on disk (app/hooks/usePersistedPreference.ts, app/hooks/useTheme.ts, app/features/Header/ThemeToggle.tsx, tests/theme-toggle.spec.ts, app/app.css, app/root.tsx, app/features/Header/index.tsx). All task commits (c1c1b2b, 335eae6, fcc14c6) and this SUMMARY's commit (53459de) confirmed present in git log.
