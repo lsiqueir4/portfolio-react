@@ -3,7 +3,20 @@ import { useSyncExternalStore } from "react";
 interface UsePersistedPreferenceOptions<T extends string> {
   storageKey: string;
   validValues: readonly T[];
-  /** Only used if no valid stored value exists — e.g. matchMedia for theme, navigator.language for locale */
+  /**
+   * The fixed value that real SSR (Node, no `window`/`navigator`) always renders.
+   * MUST be a plain constant, not derived from any browser API — it is handed
+   * to React as `getServerSnapshot`, so it has to be byte-identical on the
+   * client's very first hydration pass to whatever the server actually sent.
+   * Calling a browser-detection function here (as this hook used to do) makes
+   * the "server snapshot" secretly environment-dependent: in the browser it
+   * silently resolves to the *real* detected value instead of the value the
+   * server rendered, defeating React's hydration-mismatch correction and
+   * leaving `aria-*` attributes, `className`, and any other reader that also
+   * derives from this store permanently out of sync with each other.
+   */
+  ssrDefault: T;
+  /** Only used on the client, post-hydration — e.g. matchMedia for theme, navigator.language for locale */
   detectBrowserDefault: () => T;
   /** Side effect to run whenever the value changes (e.g. toggle classList, set documentElement.lang) */
   applySideEffect: (value: T) => void;
@@ -25,12 +38,17 @@ const stores = new Map<string, PreferenceStore<string>>();
 function createStore<T extends string>(
   storageKey: string,
   validValues: readonly T[],
+  ssrDefault: T,
   detectBrowserDefault: () => T,
   applySideEffect: (value: T) => void,
 ): PreferenceStore<T> {
   const listeners = new Set<() => void>();
-  const serverSnapshot = detectBrowserDefault();
-  let value: T = serverSnapshot;
+  // `value`'s initial computation may run in the browser (this store is
+  // lazily created on whichever side — server or client — first renders a
+  // consumer), so it's fine/desired for it to use the real browser detection
+  // here. Only `getServerSnapshot` below must stay pinned to the constant
+  // `ssrDefault`, since that's what React uses to reconcile hydration.
+  let value: T = typeof window === "undefined" ? ssrDefault : detectBrowserDefault();
 
   if (typeof window !== "undefined") {
     try {
@@ -45,7 +63,7 @@ function createStore<T extends string>(
 
   return {
     getSnapshot: () => value,
-    getServerSnapshot: () => serverSnapshot,
+    getServerSnapshot: () => ssrDefault,
     subscribe: (listener: () => void) => {
       listeners.add(listener);
       return () => listeners.delete(listener);
@@ -67,13 +85,20 @@ function createStore<T extends string>(
 function getStore<T extends string>(
   storageKey: string,
   validValues: readonly T[],
+  ssrDefault: T,
   detectBrowserDefault: () => T,
   applySideEffect: (value: T) => void,
 ): PreferenceStore<T> {
   const existing = stores.get(storageKey) as PreferenceStore<T> | undefined;
   if (existing) return existing;
 
-  const created = createStore(storageKey, validValues, detectBrowserDefault, applySideEffect);
+  const created = createStore(
+    storageKey,
+    validValues,
+    ssrDefault,
+    detectBrowserDefault,
+    applySideEffect,
+  );
   stores.set(storageKey, created as unknown as PreferenceStore<string>);
   return created;
 }
@@ -81,10 +106,17 @@ function getStore<T extends string>(
 export function usePersistedPreference<T extends string>({
   storageKey,
   validValues,
+  ssrDefault,
   detectBrowserDefault,
   applySideEffect,
 }: UsePersistedPreferenceOptions<T>) {
-  const store = getStore(storageKey, validValues, detectBrowserDefault, applySideEffect);
+  const store = getStore(
+    storageKey,
+    validValues,
+    ssrDefault,
+    detectBrowserDefault,
+    applySideEffect,
+  );
 
   const value = useSyncExternalStore(store.subscribe, store.getSnapshot, store.getServerSnapshot);
 

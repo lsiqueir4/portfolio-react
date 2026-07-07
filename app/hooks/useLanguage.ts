@@ -25,6 +25,9 @@ export function useLanguage() {
   const [language, setLanguage] = usePersistedPreference<Language>({
     storageKey: LANGUAGE_STORAGE_KEY,
     validValues: LANGUAGE_VALUES,
+    // Must match i18n/config.ts's fixed `lng: "pt"` — this is what real SSR
+    // (Node, no `navigator`) always renders, byte-for-byte.
+    ssrDefault: "pt",
     detectBrowserDefault: detectBrowserLanguage,
     applySideEffect: applyLanguage,
   });

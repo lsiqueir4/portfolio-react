@@ -21,6 +21,9 @@ export function useTheme() {
   return usePersistedPreference<Theme>({
     storageKey: THEME_STORAGE_KEY,
     validValues: THEME_VALUES,
+    // Matches detectBrowserTheme()'s `typeof window === "undefined"` branch —
+    // the value real SSR (Node) always renders, byte-for-byte.
+    ssrDefault: "light",
     detectBrowserDefault: detectBrowserTheme,
     applySideEffect: applyTheme,
   });
