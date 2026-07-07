@@ -14,6 +14,13 @@ import { test, expect } from "@playwright/test";
  */
 
 test.beforeEach(async ({ page }) => {
+  // Phase 2 pins these baselines to the dark theme: the app.css token
+  // inversion moves today's (already signed-off) dark values into a new
+  // `.dark {}` block, so forcing "theme" = "dark" here keeps these
+  // screenshots as the dark-theme reference after that change.
+  await page.addInitScript(() => {
+    window.localStorage.setItem("theme", "dark");
+  });
   await page.goto("/");
   await page.waitForLoadState("networkidle");
   await page.evaluate(() => document.fonts.ready);
