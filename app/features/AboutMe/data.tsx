@@ -53,6 +53,10 @@ export const experiences: ExperienceData[] = [
 
 export const courses: CourseData[] = [
   {
+    id: "anthropicAI",
+    institution: "Anthropic",
+  },
+  {
     id: "dataScience",
     institution: "DIO",
   },

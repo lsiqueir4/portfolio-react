@@ -6,5 +6,5 @@ export const CONTACTS = {
   linkedinRedirectLink: "https://www.linkedin.com/in/l-siqueiraa/",
   fullName: "Leandro Siqueira",
   cvDownloadLink:
-    "https://drive.google.com/uc?export=download&id=1e--yv8KrbVbT4D1aFwRdLmg4lYGYtm7i",
+    "https://drive.google.com/uc?export=download&id=1BaX84WtkI9NmFiU60Dp7KhsbGFKjMM2q",
 };

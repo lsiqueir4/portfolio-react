@@ -86,6 +86,10 @@ export const en: typeof pt = {
     },
     courses: {
       heading: "Courses",
+      anthropicAI: {
+        name: "Claude 101 | Claude Code 101 | AI Fluency",
+        conclusionYear: "2026",
+      },
       dataScience: {
         name: "Data Science with Python",
         conclusionYear: "2026",
