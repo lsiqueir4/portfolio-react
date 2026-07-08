@@ -89,6 +89,10 @@ export const pt = {
         name: "Ciência de dados com Python",
         conclusionYear: "2026",
       },
+      anthropicAI: {
+        name: "Claude 101 | Claude Code 101 | AI Fluency",
+        conclusionYear: "2026",
+      },
       jsTsReact: {
         name: "Javascript/Typescript/Next.JS/React",
         conclusionYear: "Em andamento",
